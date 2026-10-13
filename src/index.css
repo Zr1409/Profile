@@ -4,27 +4,40 @@
 
 @layer base {
   :root {
-    --bg-page: #F7F8FA;
+    --bg-page: #F8FAFC;
     --bg-surface: #FFFFFF;
-    --text-primary: #17212B;
-    --text-secondary: #596575;
-    --border-color: #E2E7ED;
-    --accent-teal: #087E8B;
+    --bg-surface-subtle: #F1F5F9;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
+    --accent-blue: #2563EB;
+    --ring-offset: #FFFFFF;
+  }
+
+  .dark {
+    --bg-page: #0B0F17;
+    --bg-surface: #111827;
+    --bg-surface-subtle: #1E293B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --border-color: #1E293B;
+    --accent-blue: #3B82F6;
+    --ring-offset: #111827;
   }
 
   html {
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
-    color-scheme: light;
   }
 
   body {
-    background-color: #F7F8FA;
-    color: #17212B;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', Inter, system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   /* All main sections automatically clear fixed navbar */
@@ -32,14 +45,14 @@
     scroll-margin-top: 5.5rem;
   }
 
-  /* Clean subtle scrollbar for light theme */
+  /* Clean subtle scrollbar */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #F7F8FA;
+    background: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -47,46 +60,48 @@
     border-radius: 3px;
   }
 
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+  }
+
   ::-webkit-scrollbar-thumb:hover {
     background: #94A3B8;
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
   }
 }
 
 @layer utilities {
-  /* Standard accessible focus ring in sophisticated teal */
+  /* Standard accessible focus ring in high-end royal blue */
   .focus-ring {
     transition: box-shadow 0.15s ease, border-color 0.15s ease;
   }
 
   .focus-ring:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #087E8B;
+    box-shadow: 0 0 0 2px var(--ring-offset), 0 0 0 4px #2563EB;
   }
 
-  /* Subtle technical grid background for light theme */
+  /* Subtle technical grid background */
   .bg-subtle-grid {
     background-size: 32px 32px;
     background-image: 
-      linear-gradient(to right, rgba(23, 33, 43, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(23, 33, 43, 0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  }
+
+  .dark .bg-subtle-grid {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   }
 
   /* Editorial typography */
   .editorial-title {
-    letter-spacing: -0.03em;
-    line-height: 1.12;
-  }
-
-  /* Premium light card surface */
-  .card-surface {
-    background-color: #FFFFFF;
-    border: 1px solid #E2E7ED;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  }
-
-  .card-surface-hover:hover {
-    border-color: #CBD5E1;
-    box-shadow: 0 4px 12px -2px rgba(23, 33, 43, 0.06);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
   }
 }
 

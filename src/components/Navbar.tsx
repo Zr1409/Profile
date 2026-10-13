@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
   activeSection: string;
@@ -20,6 +21,7 @@ const NAV_LINKS = [
 export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     let ticking = false;
@@ -86,8 +88,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-border py-3 shadow-subtle'
-          : 'bg-white/80 backdrop-blur-sm py-4 border-b border-border/60'
+          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 shadow-subtle'
+          : 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-sm py-4 border-b border-slate-200/60 dark:border-slate-800/60'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,13 +100,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               href="#"
               onClick={scrollToTop}
               aria-label="Tran Van Du Portfolio - Back to top"
-              className="text-xl font-bold tracking-tight text-content hover:text-teal-600 transition-colors focus-ring rounded-md py-1"
+              className="text-xl font-bold tracking-tight text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-ring rounded-md py-1"
             >
-              DU<span className="text-teal-600">.</span>
+              DU<span className="text-blue-600 dark:text-blue-400">.</span>
             </a>
 
-            <div className="hidden sm:inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-state-greenLight text-state-green text-xs font-medium">
-              <span className="w-1.5 h-1.5 rounded-full bg-state-green"></span>
+            <div className="hidden sm:inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-medium border border-emerald-200 dark:border-emerald-800/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>Available for Hire</span>
             </div>
           </div>
@@ -122,10 +124,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-md transition-colors focus-ring ${
+                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus-ring ${
                     isActive
-                      ? 'text-teal-700 bg-teal-50 font-semibold'
-                      : 'text-content-secondary hover:text-content hover:bg-surface-subtle'
+                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-semibold'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
                   }`}
                 >
                   {link.name}
@@ -136,12 +138,26 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
           {/* Right Action Buttons */}
           <div className="hidden md:flex items-center gap-2.5">
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors focus-ring"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-400" aria-hidden="true" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-700" aria-hidden="true" />
+              )}
+            </button>
+
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit GitHub Profile (opens in new tab)"
-              className="p-2 rounded-lg text-content-secondary hover:text-content hover:bg-surface-subtle border border-border transition-colors focus-ring"
+              className="p-2 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors focus-ring"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
@@ -149,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             <a
               href="#contact"
               onClick={(e) => scrollToSection(e, '#contact')}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-teal-600 text-white text-sm font-medium hover:bg-teal-700 transition-colors shadow-subtle focus-ring"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors shadow-sm focus-ring"
             >
               <span>Let's Talk</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -158,21 +174,34 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
           {/* Mobile Controls */}
           <div className="flex md:hidden items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 focus-ring"
+            >
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-amber-400" />
+              ) : (
+                <Moon className="w-4 h-4 text-slate-700" />
+              )}
+            </button>
+
             <a
               href={PERSONAL_INFO.github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit GitHub Profile (opens in new tab)"
-              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-border text-content-secondary focus-ring"
+              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 focus-ring"
             >
               <GithubIcon className="w-4 h-4" />
             </a>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-nav"
               aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-border text-content hover:bg-surface-subtle focus-ring"
+              className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus-ring"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -189,11 +218,11 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden border-b border-border bg-white shadow-card"
+            className="md:hidden overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-card"
           >
             <div className="max-w-6xl mx-auto px-4 py-4 space-y-2">
-              <div className="flex items-center gap-2 pb-2 mb-1 border-b border-border-subtle text-xs font-medium text-state-green">
-                <span className="w-2 h-2 rounded-full bg-state-green"></span>
+              <div className="flex items-center gap-2 pb-2 mb-1 border-b border-slate-100 dark:border-slate-800 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
                 <span>Available for Full-time Roles</span>
               </div>
 
@@ -205,19 +234,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
                   className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                     activeSection === link.href.substring(1)
-                      ? 'bg-teal-50 text-teal-700 font-semibold'
-                      : 'text-content-secondary hover:bg-surface-subtle'
+                      ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
+                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
                 >
                   {link.name}
                 </a>
               ))}
 
-              <div className="pt-2 border-t border-border-subtle">
+              <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
                 <a
                   href="#contact"
                   onClick={(e) => scrollToSection(e, '#contact')}
-                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-teal-600 text-white text-sm font-medium hover:bg-teal-700 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors shadow-sm"
                 >
                   <span>Let's Talk</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -230,3 +259,4 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     </header>
   );
 };
+

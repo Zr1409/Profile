@@ -28,7 +28,7 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 relative border-t border-border bg-white scroll-mt-24">
+    <section id="about" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           number="01"
@@ -45,18 +45,18 @@ export const About: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-7 space-y-5 text-content-secondary leading-relaxed text-base"
+            className="lg:col-span-7 space-y-5 text-slate-600 dark:text-slate-300 leading-relaxed text-base"
           >
-            <p className="text-xl sm:text-2xl font-serif italic text-content leading-snug border-l-2 border-teal-600 pl-5 my-2">
+            <p className="text-xl sm:text-2xl font-serif italic text-slate-900 dark:text-white leading-snug border-l-2 border-blue-600 dark:border-blue-400 pl-5 my-2">
               "Software engineering is about designing systems that are predictable, secure, and resilient under real-world constraints."
             </p>
 
             <p>
-              I am a Fresher Fullstack Developer based in Ho Chi Minh City, Vietnam. My technical foundation began with four years of training in Aeronautical Engineering at <strong className="text-content font-semibold">HCMUT (2015–2019)</strong>, where I developed disciplined analytical thinking, numerical problem-solving, and attention to detail.
+              I am a Fresher Fullstack Developer based in Ho Chi Minh City, Vietnam. My technical foundation began with four years of training in Aeronautical Engineering at <strong className="text-slate-900 dark:text-white font-semibold">HCMUT (2015–2019)</strong>, where I developed disciplined analytical thinking, numerical problem-solving, and attention to detail.
             </p>
 
             <p>
-              Driven by a deep interest in software architecture, I redirected my path into Software Development at <strong className="text-content font-semibold">HCMUTE</strong>, maintaining a <strong className="text-teal-700 font-semibold">GPA of 3.63 / 4.0</strong>. Over the past several years, I have concentrated on mastering <strong className="text-content font-semibold">Java, Spring Boot, Spring Security, RESTful APIs, and relational databases (MySQL, SQL Server)</strong>, while pairing this with <strong className="text-content font-semibold">React and TypeScript</strong> to deliver complete applications.
+              Driven by a deep interest in software architecture, I redirected my path into Software Development at <strong className="text-slate-900 dark:text-white font-semibold">HCMUTE</strong>, maintaining a <strong className="text-blue-600 dark:text-blue-400 font-semibold">GPA of 3.63 / 4.0</strong>. Over the past several years, I have concentrated on mastering <strong className="text-slate-900 dark:text-white font-semibold">Java, Spring Boot, Spring Security, RESTful APIs, and relational databases (MySQL, SQL Server)</strong>, while pairing this with <strong className="text-slate-900 dark:text-white font-semibold">React and TypeScript</strong> to deliver complete applications.
             </p>
 
             <p>
@@ -64,8 +64,8 @@ export const About: React.FC = () => {
             </p>
 
             <div className="pt-2 flex flex-wrap gap-3 text-xs">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-50 border border-teal-200/70 text-teal-800 font-medium">
-                <Award className="w-4 h-4 text-teal-600" aria-hidden="true" />
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/70 text-blue-700 dark:text-blue-300 font-medium">
+                <Award className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
                 <span>HCMUTE GPA: 3.63 / 4.0</span>
               </div>
             </div>
@@ -84,17 +84,17 @@ export const About: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-4 sm:p-5 rounded-xl bg-surface-subtle/70 border border-border hover:border-border-strong hover:bg-white transition-all shadow-subtle"
+                  className="p-4 sm:p-5 rounded-xl bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all shadow-sm"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-white border border-border text-teal-700 shadow-subtle">
+                    <div className="p-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-blue-600 dark:text-blue-400 shadow-sm">
                       <Icon className="w-4 h-4" aria-hidden="true" />
                     </div>
-                    <h3 className="font-bold text-base text-content">
+                    <h3 className="font-bold text-base text-slate-900 dark:text-white">
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-content-secondary leading-relaxed font-sans">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                     {pillar.description}
                   </p>
                 </div>

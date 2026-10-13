@@ -49,19 +49,19 @@ export const InteractiveSystemGraphic: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-xl mx-auto rounded-2xl bg-white border border-border p-5 sm:p-6 shadow-card">
+    <div className="w-full max-w-xl mx-auto rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-card">
       {/* Blueprint Header */}
-      <div className="flex items-center justify-between pb-4 mb-4 border-b border-border">
+      <div className="flex items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-slate-800">
         <div>
-          <span className="text-xs font-mono font-medium text-teal-700 uppercase tracking-wider block">
+          <span className="text-xs font-mono font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider block">
             System Architecture
           </span>
-          <h3 className="text-sm font-bold text-content mt-0.5">
+          <h3 className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">
             Fullstack Request & Data Pipeline
           </h3>
         </div>
-        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-state-greenLight text-state-green text-xs font-medium">
-          <span className="w-1.5 h-1.5 rounded-full bg-state-green"></span>
+        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-medium border border-emerald-200 dark:border-emerald-800/70">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>Active Pipeline</span>
         </div>
       </div>
@@ -90,8 +90,8 @@ export const InteractiveSystemGraphic: React.FC = () => {
               }}
               className={`rounded-xl p-3 sm:p-3.5 border transition-all cursor-pointer focus-ring ${
                 isSelected
-                  ? 'border-teal-300 bg-teal-50/70 shadow-subtle'
-                  : 'border-border bg-surface-subtle/60 hover:bg-white hover:border-border-strong'
+                  ? 'border-blue-400 dark:border-blue-600 bg-blue-50/70 dark:bg-blue-950/40 shadow-sm'
+                  : 'border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 hover:bg-white dark:hover:bg-slate-800 hover:border-slate-300 dark:hover:border-slate-700'
               }`}
             >
               <div className="flex items-start sm:items-center justify-between gap-3">
@@ -99,22 +99,22 @@ export const InteractiveSystemGraphic: React.FC = () => {
                   <div
                     className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 border ${
                       isSelected
-                        ? 'border-teal-200 bg-white text-teal-700'
-                        : 'border-border bg-white text-content-secondary'
+                        ? 'border-blue-200 dark:border-blue-700 bg-white dark:bg-slate-800 text-blue-600 dark:text-blue-400'
+                        : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-semibold text-sm text-content">
+                      <span className="font-semibold text-sm text-slate-900 dark:text-white">
                         {layer.title}
                       </span>
-                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white text-content-secondary border border-border">
+                      <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                         {layer.badge}
                       </span>
                     </div>
-                    <p className="text-xs text-content-secondary mt-0.5 font-sans">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-sans">
                       {layer.subtitle}
                     </p>
                   </div>
@@ -122,7 +122,7 @@ export const InteractiveSystemGraphic: React.FC = () => {
 
                 <CheckCircle2
                   className={`w-4 h-4 shrink-0 transition-colors ${
-                    isSelected ? 'text-teal-600' : 'text-content-muted'
+                    isSelected ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-600'
                   }`}
                 />
               </div>
@@ -133,9 +133,9 @@ export const InteractiveSystemGraphic: React.FC = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mt-2.5 pt-2.5 border-t border-border/80 text-xs text-content-secondary leading-relaxed font-sans"
+                  className="mt-2.5 pt-2.5 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans"
                 >
-                  <span className="text-teal-700 font-medium">Spec: </span>
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold">Spec: </span>
                   {layer.detail}
                 </motion.div>
               )}
@@ -145,18 +145,18 @@ export const InteractiveSystemGraphic: React.FC = () => {
       </div>
 
       {/* Clean Telemetry Footer */}
-      <div className="mt-4 pt-3.5 border-t border-border">
-        <div className="flex items-center justify-between text-xs text-content-muted mb-2 font-mono">
-          <span className="flex items-center gap-1.5 text-content-secondary">
-            <Server className="w-3.5 h-3.5 text-teal-600" />
+      <div className="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800">
+        <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-2 font-mono">
+          <span className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+            <Server className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>Endpoint Lifecycle</span>
           </span>
-          <span className="text-state-green font-medium">HTTP 200 OK (24ms)</span>
+          <span className="text-emerald-600 dark:text-emerald-400 font-medium">HTTP 200 OK (24ms)</span>
         </div>
-        <div className="bg-surface-subtle p-2.5 rounded-lg border border-border text-[11px] font-mono text-content-secondary space-y-0.5">
-          <div className="text-teal-700 font-medium">GET /api/v1/projects · Auth: Bearer JWT</div>
-          <div className="text-content-muted">↳ SpringSecurity: validated user role (USER)</div>
-          <div className="text-content-muted">↳ Hibernate: database query cached</div>
+        <div className="bg-slate-50 dark:bg-slate-950/60 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400 space-y-0.5">
+          <div className="text-blue-600 dark:text-blue-400 font-medium">GET /api/v1/projects · Auth: Bearer JWT</div>
+          <div className="text-slate-500 dark:text-slate-500">↳ SpringSecurity: validated user role (USER)</div>
+          <div className="text-slate-500 dark:text-slate-500">↳ Hibernate: database query cached</div>
         </div>
       </div>
     </div>

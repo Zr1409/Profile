@@ -47,11 +47,11 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-page text-content selection:bg-teal/15 selection:text-teal font-sans">
+    <div className="relative min-h-screen bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 selection:bg-blue-600/20 selection:text-blue-600 dark:selection:bg-blue-400/30 dark:selection:text-blue-300 font-sans transition-colors duration-200">
       {/* Accessible skip link for keyboard navigation */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-teal text-white font-sans text-xs font-bold shadow-lg focus-ring"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-blue-600 text-white font-sans text-xs font-bold shadow-lg focus-ring"
       >
         Skip to main content
       </a>

@@ -31,7 +31,7 @@ Best regards,`;
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative border-t border-border bg-page scroll-mt-24">
+    <section id="contact" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B0F17] scroll-mt-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           number="06"
@@ -51,16 +51,16 @@ Best regards,`;
             className="lg:col-span-6 space-y-4"
           >
             {/* Direct Email Card with Copy Trigger */}
-            <div className="p-5 rounded-xl bg-white border border-border flex items-center justify-between gap-4 shadow-subtle hover:border-border-strong transition-all">
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all">
               <div className="flex items-center gap-3.5 min-w-0">
-                <div className="p-2.5 rounded-lg bg-teal-50 text-teal-700 shrink-0 border border-teal-200">
+                <div className="p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 shrink-0 border border-blue-200 dark:border-blue-800">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
-                  <span className="text-xs font-mono text-content-muted block uppercase tracking-wider text-[11px]">Direct Email</span>
+                  <span className="text-xs font-mono text-slate-400 dark:text-slate-400 block uppercase tracking-wider text-[11px]">Direct Email</span>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
-                    className="text-base font-semibold text-content hover:text-teal-700 transition-colors truncate block focus-ring rounded"
+                    className="text-base font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors truncate block focus-ring rounded"
                   >
                     {PERSONAL_INFO.email}
                   </a>
@@ -70,13 +70,13 @@ Best regards,`;
               <button
                 onClick={handleCopyEmail}
                 aria-label="Copy email address to clipboard"
-                className="p-2 rounded-lg bg-surface-subtle hover:bg-surface-hover text-content-secondary hover:text-content border border-border transition-colors flex items-center gap-1.5 text-xs font-medium focus-ring min-h-[38px] shrink-0"
+                className="p-2 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700 transition-colors flex items-center gap-1.5 text-xs font-medium focus-ring min-h-[38px] shrink-0"
                 title="Copy email to clipboard"
               >
                 {copiedEmail ? (
                   <>
-                    <Check className="w-4 h-4 text-state-green" aria-hidden="true" />
-                    <span className="text-state-green text-xs font-medium">Copied!</span>
+                    <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                    <span className="text-emerald-600 dark:text-emerald-400 text-xs font-medium">Copied!</span>
                   </>
                 ) : (
                   <>
@@ -88,16 +88,16 @@ Best regards,`;
             </div>
 
             {/* Phone / Zalo Card */}
-            <div className="p-5 rounded-xl bg-white border border-border flex items-center gap-3.5 shadow-subtle hover:border-border-strong transition-all">
-              <div className="p-2.5 rounded-lg bg-surface-subtle text-teal-700 shrink-0 border border-border">
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 shrink-0 border border-slate-200 dark:border-slate-700">
                 <Phone className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
-                <span className="text-xs font-mono text-content-muted block uppercase tracking-wider text-[11px]">Phone / Zalo</span>
+                <span className="text-xs font-mono text-slate-400 dark:text-slate-400 block uppercase tracking-wider text-[11px]">Phone / Zalo</span>
                 <a
                   href={`tel:${PERSONAL_INFO.phone}`}
                   aria-label={`Call or Zalo message Tran Van Du at ${PERSONAL_INFO.phone}`}
-                  className="text-base font-semibold text-content hover:text-teal-700 transition-colors font-sans focus-ring rounded"
+                  className="text-base font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-sans focus-ring rounded"
                 >
                   {PERSONAL_INFO.phone}
                 </a>
@@ -105,13 +105,13 @@ Best regards,`;
             </div>
 
             {/* Location Card */}
-            <div className="p-5 rounded-xl bg-white border border-border flex items-center gap-3.5 shadow-subtle hover:border-border-strong transition-all">
-              <div className="p-2.5 rounded-lg bg-surface-subtle text-amber-700 shrink-0 border border-border">
+            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3.5 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-amber-600 dark:text-amber-400 shrink-0 border border-slate-200 dark:border-slate-700">
                 <MapPin className="w-5 h-5" aria-hidden="true" />
               </div>
               <div>
-                <span className="text-xs font-mono text-content-muted block uppercase tracking-wider text-[11px]">Base Location</span>
-                <span className="text-base font-semibold text-content">
+                <span className="text-xs font-mono text-slate-400 dark:text-slate-400 block uppercase tracking-wider text-[11px]">Base Location</span>
+                <span className="text-base font-semibold text-slate-900 dark:text-white">
                   {PERSONAL_INFO.location}
                 </span>
               </div>
@@ -124,13 +124,13 @@ Best regards,`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="lg:col-span-6 p-6 sm:p-7 rounded-xl bg-white border border-border shadow-subtle space-y-5"
+            className="lg:col-span-6 p-6 sm:p-7 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5"
           >
             <div>
-              <h3 className="text-lg font-bold text-content">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 Ready to Connect
               </h3>
-              <p className="text-sm text-content-secondary mt-1 font-sans leading-relaxed">
+              <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 font-sans leading-relaxed">
                 Whether you have an opening for a Fresher Fullstack role, a technical inquiry, or want to review my complete background, feel free to reach out.
               </p>
             </div>
@@ -139,7 +139,7 @@ Best regards,`;
             <div className="space-y-3 pt-1">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
-                className="w-full py-3 px-5 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 shadow-subtle focus-ring min-h-[44px]"
+                className="w-full py-3 px-5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 shadow-sm focus-ring min-h-[44px]"
               >
                 <Mail className="w-4 h-4" aria-hidden="true" />
                 <span>Send an Email</span>
@@ -150,9 +150,9 @@ Best regards,`;
                 href={PERSONAL_INFO.cvPath}
                 download="CV_TRAN_VAN_DU.pdf"
                 aria-label="Download official CV PDF"
-                className="w-full py-3 px-5 rounded-lg bg-white hover:bg-surface-subtle border border-border text-content text-sm font-medium transition-colors flex items-center justify-center gap-2 shadow-subtle focus-ring min-h-[44px]"
+                className="w-full py-3 px-5 rounded-lg bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-750 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-slate-100 text-sm font-medium transition-colors flex items-center justify-center gap-2 shadow-sm focus-ring min-h-[44px]"
               >
-                <Download className="w-4 h-4 text-teal-700" aria-hidden="true" />
+                <Download className="w-4 h-4 text-blue-600 dark:text-blue-400" aria-hidden="true" />
                 <span>Download CV (PDF)</span>
               </a>
 
@@ -161,23 +161,23 @@ Best regards,`;
                   href={PERSONAL_INFO.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2.5 px-4 rounded-lg bg-surface-subtle hover:bg-surface-hover border border-border text-content-secondary hover:text-content text-xs font-medium transition-colors flex items-center justify-center gap-2 focus-ring min-h-[40px]"
+                  className="flex-1 py-2.5 px-4 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-medium transition-colors flex items-center justify-center gap-2 focus-ring min-h-[40px]"
                 >
                   <GithubIcon className="w-4 h-4" />
                   <span>Visit GitHub Profile</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-content-muted" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
                 </a>
 
                 <button
                   type="button"
                   onClick={handleCopyTemplate}
-                  className="py-2.5 px-3.5 rounded-lg bg-surface-subtle hover:bg-surface-hover border border-border text-content-secondary hover:text-content text-xs font-medium transition-colors flex items-center justify-center gap-1.5 focus-ring min-h-[40px]"
+                  className="py-2.5 px-3.5 rounded-lg bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-medium transition-colors flex items-center justify-center gap-1.5 focus-ring min-h-[40px]"
                   title="Copy email template for recruiter outreach"
                 >
                   {copiedTemplate ? (
                     <>
-                      <Check className="w-4 h-4 text-state-green" />
-                      <span className="text-state-green">Template Copied!</span>
+                      <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+                      <span className="text-emerald-600 dark:text-emerald-400">Template Copied!</span>
                     </>
                   ) : (
                     <>

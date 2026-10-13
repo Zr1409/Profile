@@ -33,13 +33,13 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.4 }}
           className="flex flex-wrap items-center gap-3 mb-6 text-xs"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-teal-800 font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-600"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/70 text-blue-700 dark:text-blue-300 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
             <span>FULLSTACK DEVELOPER · VIETNAM</span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-1.5 text-content-secondary font-sans">
-            <MapPin className="w-3.5 h-3.5 text-content-muted" />
+          <div className="hidden sm:flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-sans">
+            <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
             <span>Thu Duc, Ho Chi Minh City</span>
           </div>
         </motion.div>
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-sm font-semibold tracking-wide text-teal-700 mb-3"
+              className="text-sm font-semibold tracking-wide text-blue-600 dark:text-blue-400 mb-3"
             >
               {PERSONAL_INFO.name}
             </motion.div>
@@ -63,14 +63,14 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-content leading-[1.12]"
+              className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.14]"
             >
               I build web applications with a focus on{' '}
-              <span className="text-teal-700 underline decoration-teal-200 decoration-2 underline-offset-8">
+              <span className="text-blue-600 dark:text-blue-400 underline decoration-blue-200 dark:decoration-blue-800/80 decoration-2 underline-offset-8">
                 clean architecture
               </span>{' '}
               and{' '}
-              <span className="italic font-serif font-normal text-content-secondary">
+              <span className="italic font-serif font-normal text-slate-600 dark:text-slate-400">
                 meaningful user experiences.
               </span>
             </motion.h1>
@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="mt-6 text-base sm:text-lg text-content-secondary leading-relaxed max-w-2xl font-normal"
+              className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-normal"
             >
               {PERSONAL_INFO.shortBio}
             </motion.p>
@@ -92,11 +92,11 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="mt-6 flex flex-wrap items-center gap-2"
             >
-              <span className="text-xs font-mono font-medium text-content-muted mr-1">CORE STACK:</span>
+              <span className="text-xs font-mono font-medium text-slate-500 dark:text-slate-400 mr-1">CORE STACK:</span>
               {PERSONAL_INFO.coreStack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md bg-white border border-border text-xs font-medium text-content shadow-subtle"
+                  className="px-2.5 py-1 rounded-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-medium text-slate-800 dark:text-slate-200 shadow-sm"
                 >
                   {tech}
                 </span>
@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
               <a
                 href="#projects"
                 onClick={(e) => scrollToSection(e, '#projects')}
-                className="group px-5 py-2.5 rounded-lg bg-teal-600 text-white text-sm font-medium hover:bg-teal-700 transition-colors flex items-center gap-2 shadow-subtle focus-ring min-h-[44px]"
+                className="group px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 shadow-sm focus-ring min-h-[44px]"
               >
                 <span>Explore Projects</span>
                 <ArrowDown className="w-3.5 h-3.5 transition-transform group-hover:translate-y-0.5" />
@@ -122,9 +122,9 @@ export const Hero: React.FC = () => {
               <a
                 href="#contact"
                 onClick={(e) => scrollToSection(e, '#contact')}
-                className="px-5 py-2.5 rounded-lg bg-white hover:bg-surface-subtle border border-border text-content text-sm font-medium transition-colors flex items-center gap-2 shadow-subtle focus-ring min-h-[44px]"
+                className="px-5 py-2.5 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 text-sm font-medium transition-colors flex items-center gap-2 shadow-sm focus-ring min-h-[44px]"
               >
-                <Mail className="w-4 h-4 text-teal-600" />
+                <Mail className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span>Get in Touch</span>
               </a>
 
@@ -132,12 +132,12 @@ export const Hero: React.FC = () => {
                 href={PERSONAL_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-lg bg-white hover:bg-surface-subtle border border-border text-content-secondary hover:text-content transition-colors flex items-center gap-1.5 text-sm shadow-subtle focus-ring min-h-[44px]"
+                className="p-2.5 rounded-lg bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1.5 text-sm shadow-sm focus-ring min-h-[44px]"
                 aria-label="GitHub Profile (opens in new tab)"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span className="hidden sm:inline font-medium">GitHub</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-content-muted" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
               </a>
             </motion.div>
           </div>
