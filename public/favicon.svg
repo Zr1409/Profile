@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#0c0d11" />
+  <rect x="1" y="1" width="62" height="62" rx="13" fill="none" stroke="#222634" stroke-width="2" />
+  <text x="24" y="42" font-family="'JetBrains Mono', monospace" font-size="26" font-weight="800" fill="#f4f4f5" text-anchor="middle" letter-spacing="-1">DU</text>
+  <circle cx="45" cy="40" r="4" fill="#00e5ff" />
+</svg>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zr1409.github.io/sitemap.xml
