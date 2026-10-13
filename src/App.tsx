@@ -47,7 +47,7 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-50 dark:bg-[#0B0F17] text-slate-900 dark:text-slate-100 selection:bg-blue-600/20 selection:text-blue-600 dark:selection:bg-blue-400/30 dark:selection:text-blue-300 font-sans transition-colors duration-200">
+    <div className="relative min-h-screen bg-slate-100/60 dark:bg-[#080C14] text-slate-900 dark:text-slate-100 selection:bg-blue-600/20 selection:text-blue-600 dark:selection:bg-blue-400/30 dark:selection:text-blue-300 font-sans transition-colors duration-200">
       {/* Accessible skip link for keyboard navigation */}
       <a
         href="#main-content"

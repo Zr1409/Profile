@@ -12,7 +12,7 @@ export const Projects: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden">
+    <section id="projects" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-[#070A10] scroll-mt-24 overflow-hidden">
       {/* Subtle Atmospheric Light Spotlight */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-500/5 dark:bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
 

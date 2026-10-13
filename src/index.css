@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --bg-page: #F8FAFC;
+    --bg-page: #F1F5F9;
     --bg-surface: #FFFFFF;
-    --bg-surface-subtle: #F1F5F9;
+    --bg-surface-subtle: #E2E8F0;
     --text-primary: #0F172A;
     --text-secondary: #475569;
-    --border-color: #E2E8F0;
+    --border-color: #CBD5E1;
     --accent-blue: #2563EB;
     --ring-offset: #FFFFFF;
   }
 
   .dark {
-    --bg-page: #0B0F17;
-    --bg-surface: #111827;
+    --bg-page: #080C14;
+    --bg-surface: #0F172A;
     --bg-surface-subtle: #1E293B;
     --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
     --border-color: #1E293B;
     --accent-blue: #3B82F6;
-    --ring-offset: #111827;
+    --ring-offset: #080C14;
   }
 
   html {
@@ -86,49 +86,56 @@
 
   /* Subtle technical grid background */
   .bg-subtle-grid {
-    background-size: 40px 40px;
+    background-size: 32px 32px;
     background-image: 
-      linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
   }
 
   .dark .bg-subtle-grid {
     background-image: 
-      linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(148, 163, 184, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
   }
 
-  /* Ambient light spotlight for vibrant depth */
+  /* Ambient light spotlight for vibrant depth & eliminating blank white-out */
   .bg-ambient-spotlight {
+    background-color: #F8FAFC;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.12), transparent 70%),
-      radial-gradient(circle at 100% 40%, rgba(6, 182, 212, 0.07), transparent 50%),
-      radial-gradient(circle at 0% 70%, rgba(99, 102, 241, 0.06), transparent 50%);
+      radial-gradient(ellipse 90% 60% at 50% -15%, rgba(59, 130, 246, 0.18), transparent 70%),
+      radial-gradient(circle at 85% 30%, rgba(14, 165, 233, 0.15), transparent 50%),
+      radial-gradient(circle at 15% 65%, rgba(99, 102, 241, 0.14), transparent 50%),
+      radial-gradient(circle at 50% 100%, rgba(224, 242, 254, 0.7), transparent 60%);
   }
 
   .dark .bg-ambient-spotlight {
+    background-color: #080C14;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.22), transparent 70%),
-      radial-gradient(circle at 100% 40%, rgba(6, 182, 212, 0.12), transparent 50%),
-      radial-gradient(circle at 0% 70%, rgba(99, 102, 241, 0.10), transparent 50%);
+      radial-gradient(ellipse 85% 55% at 50% -15%, rgba(37, 99, 235, 0.30), transparent 70%),
+      radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.18), transparent 50%),
+      radial-gradient(circle at 15% 65%, rgba(99, 102, 241, 0.15), transparent 50%);
   }
 
   /* Soft decorative section glow */
   .bg-section-mesh {
-    background-image: radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.05), transparent 60%);
+    background-image: 
+      radial-gradient(ellipse at 80% 10%, rgba(59, 130, 246, 0.08), transparent 50%),
+      radial-gradient(ellipse at 20% 90%, rgba(99, 102, 241, 0.06), transparent 50%);
   }
 
   .dark .bg-section-mesh {
-    background-image: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 60%);
+    background-image: 
+      radial-gradient(ellipse at 80% 10%, rgba(59, 130, 246, 0.14), transparent 50%),
+      radial-gradient(ellipse at 20% 90%, rgba(99, 102, 241, 0.12), transparent 50%);
   }
 
   /* Premium card glow & depth */
   .card-glow {
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
   }
 
   .dark .card-glow {
-    box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.5), 0 0 15px -3px rgba(37, 99, 235, 0.08);
+    box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.6), 0 0 15px -3px rgba(37, 99, 235, 0.10);
   }
 
   /* Editorial typography */

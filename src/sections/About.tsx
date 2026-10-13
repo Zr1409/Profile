@@ -50,7 +50,7 @@ export const About: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7 space-y-6 text-slate-600 dark:text-slate-300 leading-relaxed text-base sm:text-lg"
           >
-            <p className="text-2xl sm:text-3xl font-serif italic text-slate-900 dark:text-white leading-snug border-l-4 border-blue-600 dark:border-blue-400 pl-6 my-3">
+            <p className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white leading-snug border-l-4 border-blue-600 dark:border-blue-400 pl-6 my-4">
               "Software engineering is about designing systems that are predictable, secure, and resilient under real-world constraints."
             </p>
 

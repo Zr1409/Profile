@@ -2,9 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
-import { PERSONAL_INFO } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
-import logoImg from '../assets/img/logo.png';
+import { PERSONAL_INFO } from '../data/portfolioData';
+import logoLight from '../assets/img/logo-light.png';
+import logoDark from '../assets/img/logo-dark.png';
 
 interface NavbarProps {
   activeSection: string;
@@ -87,11 +88,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        scrolled
-          ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 shadow-subtle'
-          : 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-sm py-4 border-b border-slate-200/60 dark:border-slate-800/60'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${scrolled
+        ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-3 shadow-subtle'
+        : 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-sm py-4 border-b border-slate-200/60 dark:border-slate-800/60'
+        }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -103,19 +103,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               aria-label="Tran Van Du Portfolio - Back to top"
               className="flex items-center gap-2 focus-ring rounded-lg p-0.5 transition-transform hover:scale-[1.02]"
             >
-              <div className="h-8 sm:h-9 px-2 py-0.5 rounded-lg bg-white dark:bg-white/95 border border-slate-200 dark:border-slate-300 shadow-sm flex items-center justify-center">
-                <img 
-                  src={logoImg} 
-                  alt="Tran Van Du Logo" 
-                  className="h-6 sm:h-7 w-auto object-contain" 
+              <div className="h-9 sm:h-10 flex items-center justify-center">
+                <img
+                  src={logoLight}
+                  alt="Tran Van Du Logo"
+                  className="h-8 sm:h-9 w-auto object-contain dark:hidden"
+                />
+                <img
+                  src={logoDark}
+                  alt="Tran Van Du Logo"
+                  className="h-8 sm:h-9 w-auto object-contain hidden dark:block"
                 />
               </div>
             </a>
-
-            <div className="hidden sm:inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-medium border border-emerald-200 dark:border-emerald-800/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span>Available for Hire</span>
-            </div>
           </div>
 
           {/* Desktop Nav */}
@@ -131,11 +131,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus-ring ${
-                    isActive
-                      ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-semibold'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
-                  }`}
+                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors focus-ring ${isActive
+                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-semibold'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+                    }`}
                 >
                   {link.name}
                 </a>
@@ -239,11 +238,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
                   href={link.href}
                   onClick={(e) => scrollToSection(e, link.href)}
                   aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
-                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    activeSection === link.href.substring(1)
-                      ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
-                      : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
-                  }`}
+                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${activeSection === link.href.substring(1)
+                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 font-semibold'
+                    : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'
+                    }`}
                 >
                   {link.name}
                 </a>

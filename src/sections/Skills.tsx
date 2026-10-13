@@ -10,7 +10,7 @@ export const Skills: React.FC = () => {
   const categoryIcons = [Server, Layout, Database, Wrench, Code2];
 
   return (
-    <section id="skills" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden">
+    <section id="skills" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-[#070A10] scroll-mt-24 overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/3 right-10 w-[600px] h-[350px] bg-blue-500/5 dark:bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
 

@@ -31,7 +31,7 @@ Best regards,`;
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden bg-ambient-spotlight">
+    <section id="contact" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-100/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden bg-ambient-spotlight">
       {/* Ambient background light orb */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-500/5 dark:bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
 

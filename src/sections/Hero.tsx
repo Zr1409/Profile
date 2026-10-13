@@ -23,11 +23,11 @@ export const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative min-h-[92vh] pt-32 pb-24 flex flex-col justify-center overflow-hidden scroll-mt-24 bg-ambient-spotlight">
       {/* Decorative Atmospheric Glow Orbs */}
-      <div className="absolute top-1/6 left-1/3 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-500/15 via-blue-400/10 to-cyan-400/10 dark:from-blue-600/25 dark:via-blue-500/15 dark:to-cyan-500/15 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute -bottom-10 right-10 w-[450px] h-[350px] bg-gradient-to-bl from-indigo-500/10 to-blue-500/10 dark:from-indigo-600/15 dark:to-blue-600/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute -top-10 left-1/4 -translate-x-1/2 w-[650px] h-[400px] bg-gradient-to-tr from-blue-400/25 via-sky-300/20 to-indigo-300/15 dark:from-blue-600/25 dark:via-blue-500/15 dark:to-cyan-500/15 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[550px] h-[450px] bg-gradient-to-bl from-cyan-400/20 via-blue-400/15 to-indigo-400/15 dark:from-indigo-600/20 dark:to-blue-600/15 blur-[130px] rounded-full pointer-events-none" />
 
       {/* Subtle Light Grid Texture */}
-      <div className="absolute inset-0 bg-subtle-grid pointer-events-none opacity-75" />
+      <div className="absolute inset-0 bg-subtle-grid pointer-events-none opacity-80" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Eyebrow Badge */}
@@ -57,12 +57,12 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-xs sm:text-sm font-mono font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-3"
+              className="text-xs sm:text-sm font-sans font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-3"
             >
               Hi, I'm {PERSONAL_INFO.name}
             </motion.div>
 
-            {/* Editorial Headline */}
+            {/* Unified Editorial Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,11 +70,11 @@ export const Hero: React.FC = () => {
               className="text-4xl sm:text-6xl lg:text-[4rem] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08]"
             >
               I build web applications with a focus on{' '}
-              <span className="text-blue-600 dark:text-blue-400 underline decoration-blue-200 dark:decoration-blue-800/80 decoration-2 underline-offset-8">
+              <span className="text-blue-600 dark:text-blue-400">
                 clean architecture
               </span>{' '}
               and{' '}
-              <span className="italic font-serif font-normal text-slate-600 dark:text-slate-400">
+              <span className="text-slate-600 dark:text-slate-400 font-extrabold">
                 meaningful user experiences.
               </span>
             </motion.h1>

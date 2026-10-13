@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
       'Administrative dashboard for platform users, jobs, and transaction monitoring',
       'AI Chatbot integration to assist users during job search and hiring inquiries'
     ],
-    githubUrl: 'https://github.com/Zr1409/Project_Freelancer',
+    githubUrl: 'https://github.com/Zr1409/TalentHub_Freelancer_Platform',
     architectureHighlights: [
       {
         layer: 'Leadership & Design',
