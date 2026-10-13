@@ -55,7 +55,12 @@
 @layer utilities {
   /* Standard accessible focus ring in sophisticated teal */
   .focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .focus-ring:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #087E8B;
   }
 
   /* Subtle technical grid background for light theme */
