@@ -6,8 +6,11 @@ import { Briefcase, CalendarDays, MapPin, CheckCircle2 } from 'lucide-react';
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/95 scroll-mt-24 overflow-hidden bg-section-mesh">
+      {/* Ambient background light */}
+      <div className="absolute bottom-0 left-0 w-[500px] h-[350px] bg-blue-500/5 dark:bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           number="03"
           tag="Work History"
@@ -34,17 +37,17 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Card Container */}
-              <div className="rounded-xl bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 p-5 sm:p-7 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all shadow-sm">
+              <div className="rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 hover:border-blue-400/80 dark:hover:border-blue-600/80 transition-all card-glow">
                 {/* Meta Header */}
-                <div className="flex flex-wrap items-start justify-between gap-3 mb-3.5">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
                   <div>
                     <span className="text-xs font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2.5 py-0.5 rounded border border-blue-200 dark:border-blue-800/80">
                       {exp.type}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight mt-2">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight mt-2.5">
                       {exp.position}
                     </h3>
-                    <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-1 flex items-center gap-2">
+                    <div className="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400 mt-1 flex items-center gap-2">
                       <Briefcase className="w-4 h-4 text-blue-600 dark:text-blue-400 shrink-0" aria-hidden="true" />
                       <span>{exp.company}</span>
                     </div>

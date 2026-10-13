@@ -31,8 +31,11 @@ Best regards,`;
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B0F17] scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden bg-ambient-spotlight">
+      {/* Ambient background light orb */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-500/5 dark:bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           number="06"
           tag="Get In Touch"
@@ -51,9 +54,9 @@ Best regards,`;
             className="lg:col-span-6 space-y-4"
           >
             {/* Direct Email Card with Copy Trigger */}
-            <div className="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 shadow-sm hover:border-slate-300 dark:hover:border-slate-700 transition-all">
+            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-4 card-glow hover:border-blue-400/80 dark:hover:border-blue-600/80 transition-all">
               <div className="flex items-center gap-3.5 min-w-0">
-                <div className="p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 shrink-0 border border-blue-200 dark:border-blue-800">
+                <div className="p-3 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 shrink-0 border border-blue-200 dark:border-blue-800 shadow-sm">
                   <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
@@ -124,13 +127,13 @@ Best regards,`;
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="lg:col-span-6 p-6 sm:p-7 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-5"
+            className="lg:col-span-6 p-7 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 card-glow space-y-6"
           >
             <div>
-              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
                 Ready to Connect
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 mt-1 font-sans leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mt-1.5 font-sans leading-relaxed">
                 Whether you have an opening for a Fresher Fullstack role, a technical inquiry, or want to review my complete background, feel free to reach out.
               </p>
             </div>

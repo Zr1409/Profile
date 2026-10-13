@@ -12,8 +12,11 @@ export const Projects: React.FC = () => {
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<Project | null>(null);
 
   return (
-    <section id="projects" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-[#0B0F17] scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-[#080C14] scroll-mt-24 overflow-hidden">
+      {/* Subtle Atmospheric Light Spotlight */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-blue-500/5 dark:bg-blue-600/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           number="02"
           tag="Selected Works"
@@ -33,7 +36,7 @@ export const Projects: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5 }}
-                className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 lg:p-9 shadow-card overflow-hidden"
+                className="relative rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 lg:p-9 card-glow hover:border-blue-400/80 dark:hover:border-blue-600/80 transition-all overflow-hidden"
               >
                 {/* Subtle index watermark */}
                 <span className="absolute -top-4 -right-2 text-8xl sm:text-9xl font-mono font-extrabold text-slate-900/[0.03] dark:text-white/[0.03] pointer-events-none select-none">
@@ -51,22 +54,22 @@ export const Projects: React.FC = () => {
                   {/* Project Details Column */}
                   <div className={`lg:col-span-6 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
                     {/* Index & Category */}
-                    <div className="flex items-center gap-2 font-mono text-xs text-blue-600 dark:text-blue-400 mb-1.5 font-semibold">
+                    <div className="flex items-center gap-2 font-mono text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2 font-bold">
                       <span>PROJECT {project.number}</span>
                       <span className="text-slate-300 dark:text-slate-700">/</span>
                       <span className="text-slate-500 dark:text-slate-400 uppercase tracking-wider">{project.category}</span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                       {project.title}
                     </h3>
-                    <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
+                    <div className="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400 mt-1">
                       {project.subtitle}
                     </div>
 
                     {/* Summary */}
-                    <p className="mt-3.5 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                       {project.summary}
                     </p>
 

@@ -21,9 +21,13 @@ export const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-[90vh] pt-32 pb-20 flex flex-col justify-center overflow-hidden scroll-mt-24">
+    <section id="hero" className="relative min-h-[92vh] pt-32 pb-24 flex flex-col justify-center overflow-hidden scroll-mt-24 bg-ambient-spotlight">
+      {/* Decorative Atmospheric Glow Orbs */}
+      <div className="absolute top-1/6 left-1/3 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-500/15 via-blue-400/10 to-cyan-400/10 dark:from-blue-600/25 dark:via-blue-500/15 dark:to-cyan-500/15 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute -bottom-10 right-10 w-[450px] h-[350px] bg-gradient-to-bl from-indigo-500/10 to-blue-500/10 dark:from-indigo-600/15 dark:to-blue-600/15 blur-[120px] rounded-full pointer-events-none" />
+
       {/* Subtle Light Grid Texture */}
-      <div className="absolute inset-0 bg-subtle-grid pointer-events-none opacity-60" />
+      <div className="absolute inset-0 bg-subtle-grid pointer-events-none opacity-75" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Top Eyebrow Badge */}
@@ -33,12 +37,12 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.4 }}
           className="flex flex-wrap items-center gap-3 mb-6 text-xs"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/70 text-blue-700 dark:text-blue-300 font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800/80 text-blue-700 dark:text-blue-300 font-semibold shadow-sm backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
             <span>FULLSTACK DEVELOPER · VIETNAM</span>
           </div>
 
-          <div className="hidden sm:flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-sans">
+          <div className="hidden sm:flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-sans text-xs">
             <MapPin className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
             <span>Thu Duc, Ho Chi Minh City</span>
           </div>
@@ -53,9 +57,9 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.05 }}
-              className="text-sm font-semibold tracking-wide text-blue-600 dark:text-blue-400 mb-3"
+              className="text-xs sm:text-sm font-mono font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase mb-3"
             >
-              {PERSONAL_INFO.name}
+              Hi, I'm {PERSONAL_INFO.name}
             </motion.div>
 
             {/* Editorial Headline */}
@@ -63,7 +67,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-slate-900 dark:text-white leading-[1.14]"
+              className="text-4xl sm:text-6xl lg:text-[4rem] font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.08]"
             >
               I build web applications with a focus on{' '}
               <span className="text-blue-600 dark:text-blue-400 underline decoration-blue-200 dark:decoration-blue-800/80 decoration-2 underline-offset-8">
@@ -80,7 +84,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-normal"
+              className="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal"
             >
               {PERSONAL_INFO.shortBio}
             </motion.p>

@@ -6,8 +6,11 @@ import { GraduationCap, CalendarDays, Award } from 'lucide-react';
 
 export const Education: React.FC = () => {
   return (
-    <section id="education" className="py-20 sm:py-28 relative border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 scroll-mt-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-24 sm:py-32 relative border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/95 scroll-mt-24 overflow-hidden bg-section-mesh">
+      {/* Soft ambient corner light */}
+      <div className="absolute top-0 left-0 w-[500px] h-[350px] bg-blue-500/5 dark:bg-blue-600/10 blur-[100px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           number="05"
           tag="Academic Background"
@@ -19,7 +22,7 @@ export const Education: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Universities Column (Left) */}
           <div className="lg:col-span-7 space-y-6">
-            <h3 className="text-sm font-mono font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-2 mb-2">
+            <h3 className="text-sm font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-2 mb-2">
               <GraduationCap className="w-4 h-4" />
               <span>Higher Education</span>
             </h3>
@@ -31,15 +34,15 @@ export const Education: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-5 sm:p-6 rounded-xl bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:bg-white dark:hover:bg-slate-800 transition-all shadow-sm"
+                className="p-6 sm:p-7 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 hover:border-blue-400/80 dark:hover:border-blue-600/80 transition-all card-glow"
               >
                 {/* University Header */}
-                <div className="flex flex-wrap items-start justify-between gap-2.5 mb-2.5">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+                    <h4 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {edu.institution}
                     </h4>
-                    <div className="text-sm font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
+                    <div className="text-sm sm:text-base font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
                       {edu.major}
                     </div>
                   </div>

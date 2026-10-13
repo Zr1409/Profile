@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import logoImg from '../assets/img/logo.png';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -13,19 +14,28 @@ export const Footer: React.FC = () => {
     <footer className="py-10 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-sm transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-slate-200 dark:border-slate-800">
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-base text-slate-900 dark:text-white font-sans tracking-tight">
-                {PERSONAL_INFO.name}
-              </span>
-              <span className="text-slate-300 dark:text-slate-600">·</span>
-              <span className="text-sm text-slate-600 dark:text-slate-400">
-                {PERSONAL_INFO.title}
-              </span>
+          <div className="flex items-center gap-3.5">
+            <div className="h-9 px-2 py-0.5 rounded-lg bg-white dark:bg-white/95 border border-slate-200 dark:border-slate-300 shadow-sm flex items-center justify-center shrink-0">
+              <img 
+                src={logoImg} 
+                alt="Tran Van Du Logo" 
+                className="h-6 sm:h-7 w-auto object-contain" 
+              />
             </div>
-            <p className="text-xs text-slate-400 dark:text-slate-400 mt-1">
-              {PERSONAL_INFO.location}
-            </p>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="font-bold text-base text-slate-900 dark:text-white font-sans tracking-tight">
+                  {PERSONAL_INFO.name}
+                </span>
+                <span className="text-slate-300 dark:text-slate-600">·</span>
+                <span className="text-sm text-slate-600 dark:text-slate-400">
+                  {PERSONAL_INFO.title}
+                </span>
+              </div>
+              <p className="text-xs text-slate-400 dark:text-slate-400 mt-0.5">
+                {PERSONAL_INFO.location}
+              </p>
+            </div>
           </div>
 
           <button

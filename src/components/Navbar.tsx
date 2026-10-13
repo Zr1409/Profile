@@ -4,6 +4,7 @@ import { Menu, X, ArrowUpRight, Sun, Moon } from 'lucide-react';
 import { GithubIcon } from './GithubIcon';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
+import logoImg from '../assets/img/logo.png';
 
 interface NavbarProps {
   activeSection: string;
@@ -100,9 +101,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
               href="#"
               onClick={scrollToTop}
               aria-label="Tran Van Du Portfolio - Back to top"
-              className="text-xl font-bold tracking-tight text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors focus-ring rounded-md py-1"
+              className="flex items-center gap-2 focus-ring rounded-lg p-0.5 transition-transform hover:scale-[1.02]"
             >
-              DU<span className="text-blue-600 dark:text-blue-400">.</span>
+              <div className="h-8 sm:h-9 px-2 py-0.5 rounded-lg bg-white dark:bg-white/95 border border-slate-200 dark:border-slate-300 shadow-sm flex items-center justify-center">
+                <img 
+                  src={logoImg} 
+                  alt="Tran Van Du Logo" 
+                  className="h-6 sm:h-7 w-auto object-contain" 
+                />
+              </div>
             </a>
 
             <div className="hidden sm:inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-medium border border-emerald-200 dark:border-emerald-800/70">

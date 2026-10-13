@@ -86,22 +86,55 @@
 
   /* Subtle technical grid background */
   .bg-subtle-grid {
-    background-size: 32px 32px;
+    background-size: 40px 40px;
     background-image: 
-      linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+      linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
   }
 
   .dark .bg-subtle-grid {
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  }
+
+  /* Ambient light spotlight for vibrant depth */
+  .bg-ambient-spotlight {
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.12), transparent 70%),
+      radial-gradient(circle at 100% 40%, rgba(6, 182, 212, 0.07), transparent 50%),
+      radial-gradient(circle at 0% 70%, rgba(99, 102, 241, 0.06), transparent 50%);
+  }
+
+  .dark .bg-ambient-spotlight {
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.22), transparent 70%),
+      radial-gradient(circle at 100% 40%, rgba(6, 182, 212, 0.12), transparent 50%),
+      radial-gradient(circle at 0% 70%, rgba(99, 102, 241, 0.10), transparent 50%);
+  }
+
+  /* Soft decorative section glow */
+  .bg-section-mesh {
+    background-image: radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.05), transparent 60%);
+  }
+
+  .dark .bg-section-mesh {
+    background-image: radial-gradient(ellipse at top right, rgba(59, 130, 246, 0.12), transparent 60%);
+  }
+
+  /* Premium card glow & depth */
+  .card-glow {
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  }
+
+  .dark .card-glow {
+    box-shadow: 0 4px 25px -4px rgba(0, 0, 0, 0.5), 0 0 15px -3px rgba(37, 99, 235, 0.08);
   }
 
   /* Editorial typography */
   .editorial-title {
-    letter-spacing: -0.025em;
-    line-height: 1.15;
+    letter-spacing: -0.03em;
+    line-height: 1.12;
   }
 }
 
