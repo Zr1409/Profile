@@ -18,10 +18,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
     };
 
     if (project) {
-      // Prevent body scrolling
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-      // Auto-focus the close button for accessibility
       setTimeout(() => {
         closeButtonRef.current?.focus();
       }, 50);
@@ -51,68 +49,68 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 bg-charcoal-950/85 backdrop-blur-md cursor-pointer"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm cursor-pointer"
           aria-hidden="true"
         />
 
         {/* Modal Window */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
+          initial={{ opacity: 0, scale: 0.97, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 20 }}
+          exit={{ opacity: 0, scale: 0.97, y: 16 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-charcoal-900 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl z-10"
+          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white border border-border rounded-2xl p-6 sm:p-8 shadow-modal z-10 text-content"
         >
           {/* Close button */}
           <button
             ref={closeButtonRef}
             onClick={onClose}
             aria-label="Close case study modal"
-            className="absolute top-5 right-5 p-2 rounded-lg bg-charcoal-800 text-ivory-400 hover:text-white border border-white/10 hover:border-white/20 transition-colors focus-ring min-w-[44px] min-h-[44px] flex items-center justify-center"
+            className="absolute top-5 right-5 p-2 rounded-lg bg-surface-subtle text-content-secondary hover:text-content hover:bg-surface-hover border border-border transition-colors focus-ring min-w-[40px] min-h-[40px] flex items-center justify-center"
           >
             <X className="w-5 h-5" />
           </button>
 
           {/* Header */}
           <div className="pr-12">
-            <div className="flex items-center gap-3 font-mono text-xs text-tech-cyan mb-2">
+            <div className="flex items-center gap-2 font-mono text-xs text-teal-700 mb-1.5 font-medium">
               <span>PROJECT // {project.number}</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-tech-cyan" aria-hidden="true"></span>
-              <span className="text-ivory-400">{project.category}</span>
+              <span className="text-border-strong">/</span>
+              <span className="text-content-secondary uppercase">{project.category}</span>
             </div>
 
             <h3
               id="case-study-title"
-              className="text-2xl sm:text-3xl font-extrabold text-ivory-100 tracking-tight"
+              className="text-2xl sm:text-3xl font-bold text-content tracking-tight"
             >
               {project.title} — {project.subtitle}
             </h3>
 
-            <p className="mt-3 text-sm sm:text-base text-ivory-300 leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-content-secondary leading-relaxed font-sans">
               {project.summary}
             </p>
           </div>
 
           {/* Metadata Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-6 p-4 rounded-xl bg-charcoal-850 border border-white/[0.06] text-xs font-mono">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-5 p-4 rounded-xl bg-surface-subtle border border-border text-xs">
             <div>
-              <span className="text-ivory-500 block mb-1">ROLE</span>
-              <span className="text-ivory-200 font-semibold">{project.role}</span>
+              <span className="text-content-muted font-mono block mb-1 uppercase text-[11px]">Role</span>
+              <span className="text-content font-semibold">{project.role}</span>
             </div>
             {project.teamSize && (
               <div>
-                <span className="text-ivory-500 block mb-1">TEAM SIZE</span>
-                <span className="text-ivory-200 font-semibold flex items-center gap-1.5">
-                  <Users className="w-3.5 h-3.5 text-tech-cyan" />
+                <span className="text-content-muted font-mono block mb-1 uppercase text-[11px]">Team Size</span>
+                <span className="text-content font-semibold flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5 text-teal-600" />
                   {project.teamSize}
                 </span>
               </div>
             )}
             {project.timeline && (
               <div>
-                <span className="text-ivory-500 block mb-1">TIMELINE</span>
-                <span className="text-ivory-200 font-semibold flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-tech-lime" />
+                <span className="text-content-muted font-mono block mb-1 uppercase text-[11px]">Timeline</span>
+                <span className="text-content font-semibold flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-teal-600" />
                   {project.timeline}
                 </span>
               </div>
@@ -121,22 +119,21 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
 
           {/* Architecture Highlights */}
           {project.architectureHighlights && (
-            <div className="my-6">
-              <h4 className="flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-tech-cyan font-bold mb-3">
-                <Cpu className="w-4 h-4" />
+            <div className="my-5">
+              <h4 className="flex items-center gap-2 text-sm font-semibold text-content mb-3">
+                <Cpu className="w-4 h-4 text-teal-600" />
                 <span>Architecture & Engineering Design</span>
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {project.architectureHighlights.map((arch, idx) => (
                   <div
                     key={idx}
-                    className="p-3.5 rounded-xl bg-charcoal-850/70 border border-white/[0.06] hover:border-white/10 transition-colors"
+                    className="p-3.5 rounded-xl bg-surface-subtle border border-border"
                   >
-                    <div className="text-xs font-bold text-ivory-200 mb-1 flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-tech-cyan" aria-hidden="true"></span>
+                    <div className="text-xs font-bold text-content mb-1">
                       {arch.layer}
                     </div>
-                    <p className="text-xs text-ivory-400 leading-relaxed font-mono">
+                    <p className="text-xs text-content-secondary leading-relaxed font-sans">
                       {arch.details}
                     </p>
                   </div>
@@ -147,18 +144,18 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
 
           {/* Challenge and Solution */}
           {project.challengeAndSolution && (
-            <div className="my-6 p-4 rounded-xl bg-charcoal-850/50 border border-white/[0.06] space-y-3">
-              <h4 className="text-xs font-mono uppercase tracking-wider text-amber-400 font-bold flex items-center gap-2">
-                <Wrench className="w-4 h-4" />
-                <span>Technical Challenge & Engineering Solution</span>
+            <div className="my-5 p-4 rounded-xl bg-teal-50/60 border border-teal-200 space-y-2.5">
+              <h4 className="text-xs font-semibold text-teal-900 flex items-center gap-2 uppercase tracking-wide">
+                <Wrench className="w-4 h-4 text-teal-700" />
+                <span>Technical Challenge & Engineering Resolution</span>
               </h4>
-              <div className="text-xs text-ivory-300 space-y-2 leading-relaxed">
+              <div className="text-xs text-content-secondary space-y-1.5 leading-relaxed font-sans">
                 <div>
-                  <span className="font-semibold text-ivory-200 font-mono">Challenge: </span>
+                  <strong className="text-content">Challenge: </strong>
                   {project.challengeAndSolution.challenge}
                 </div>
                 <div>
-                  <span className="font-semibold text-tech-lime font-mono">Resolution: </span>
+                  <strong className="text-teal-800">Resolution: </strong>
                   {project.challengeAndSolution.solution}
                 </div>
               </div>
@@ -166,32 +163,32 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           )}
 
           {/* Key Features */}
-          <div className="my-6">
-            <h4 className="flex items-center gap-2 text-sm font-mono uppercase tracking-wider text-tech-lime font-bold mb-3">
-              <ShieldCheck className="w-4 h-4" />
+          <div className="my-5">
+            <h4 className="flex items-center gap-2 text-sm font-semibold text-content mb-3">
+              <ShieldCheck className="w-4 h-4 text-teal-600" />
               <span>Key Implemented Capabilities</span>
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               {project.keyFeatures.map((feat, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-2.5 text-xs text-ivory-300 p-2.5 rounded-lg bg-charcoal-850/40 border border-white/[0.04]"
+                  className="flex items-start gap-2.5 text-xs text-content-secondary p-2.5 rounded-lg bg-surface-subtle border border-border"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-tech-lime shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">{feat}</span>
+                  <CheckCircle2 className="w-4 h-4 text-state-green shrink-0 mt-0.5" />
+                  <span className="leading-relaxed font-sans">{feat}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Tech Stack Pills */}
-          <div className="my-6">
-            <span className="text-xs font-mono uppercase text-ivory-400 block mb-2">Technologies Used</span>
-            <div className="flex flex-wrap gap-2">
+          <div className="my-5">
+            <span className="text-xs font-mono font-medium text-content-muted block mb-2 uppercase tracking-wider">Technologies Used</span>
+            <div className="flex flex-wrap gap-1.5">
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-1 rounded-md bg-charcoal-800 border border-white/10 text-xs font-mono text-ivory-300"
+                  className="px-2.5 py-1 rounded-md bg-surface-subtle border border-border text-xs font-mono text-content-secondary"
                 >
                   {tech}
                 </span>
@@ -200,17 +197,17 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           </div>
 
           {/* Actions */}
-          <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
+          <div className="mt-6 pt-5 border-t border-border flex flex-wrap items-center justify-between gap-3">
+            <div className="flex items-center gap-2.5">
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-charcoal-800 hover:bg-charcoal-700 border border-white/10 hover:border-white/20 text-xs font-mono font-semibold text-ivory-100 transition-colors focus-ring min-h-[44px]"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-subtle hover:bg-surface-hover border border-border text-xs font-medium text-content transition-colors focus-ring min-h-[40px]"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>Source Code (GitHub)</span>
-                <ExternalLink className="w-3.5 h-3.5 opacity-60" />
+                <ExternalLink className="w-3.5 h-3.5 text-content-muted" />
               </a>
 
               {project.liveUrl && (
@@ -218,7 +215,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-tech-cyan hover:bg-white text-charcoal-950 text-xs font-mono font-bold transition-colors shadow-sm focus-ring min-h-[44px]"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white text-xs font-medium transition-colors shadow-subtle focus-ring min-h-[40px]"
                 >
                   <span>Launch Live Demo</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -228,7 +225,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
 
             <button
               onClick={onClose}
-              className="text-xs font-mono text-ivory-400 hover:text-ivory-200 transition-colors focus-ring py-2 px-3 rounded-lg min-h-[44px]"
+              className="text-xs text-content-secondary hover:text-content transition-colors focus-ring py-2 px-3 rounded-lg min-h-[40px]"
             >
               Close Window [Esc]
             </button>

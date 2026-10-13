@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     title: 'MinLish',
     subtitle: 'English Learning Platform with Spaced Repetition',
     category: 'Fullstack Web Application',
-    summary: 'A fullstack English vocabulary learning platform designed around flashcards, spaced repetition (SM-2 algorithm), and learning progress tracking. Features decoupled frontend/backend architecture with robust security and responsive interface.',
+    summary: 'A fullstack English vocabulary learning platform designed around flashcards, spaced repetition (SM-2 algorithm), and learning progress tracking. Built with decoupled architecture, JWT/OAuth2 security, and a responsive interface.',
     role: 'Fullstack Developer · System Designer · UI & Database Designer',
     teamSize: '1 person',
     timeline: '02/2026 – 03/2026',
@@ -45,8 +45,8 @@ export const PROJECTS: Project[] = [
       'Vocabulary set management (CRUD) and interactive flashcard study sessions',
       'SM-2 spaced repetition algorithm for optimal memory retention scheduling',
       'CSV/XLSX import and export for rapid vocabulary set ingestion',
-      'Learning analytics dashboard with retention tracking and progress curves',
-      'In-app notifications and email reminder preference settings',
+      'Learning dashboard with retention tracking and progress curves',
+      'In-app notifications and email reminder preferences',
       'Modern responsive UI optimized for mobile and desktop viewports'
     ],
     githubUrl: 'https://github.com/Zr1409/Minlish_Fullstack',
@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
     title: 'TalentHub',
     subtitle: 'Two-Sided Freelancer Marketplace Platform',
     category: 'Freelance & Recruitment System',
-    summary: 'A comprehensive freelancer job-finding platform connecting employers and freelancers through job listings, applications, secure transactions, real-time messaging, and online interviews. Engineered with reusable UI components and an AI chatbot assistant.',
+    summary: 'A freelancer job-finding platform connecting employers and freelancers through job listings, applications, secure transactions, real-time messaging, and online interviews. Engineered with reusable UI components and an AI chatbot assistant.',
     role: 'Team Leader · Fullstack Developer · UI & Database Designer',
     teamSize: '2 people',
     timeline: '03/2025 – 06/2025',
@@ -103,7 +103,7 @@ export const PROJECTS: Project[] = [
       'Administrative dashboard for platform users, jobs, and transaction monitoring',
       'AI Chatbot integration to assist users during job search and hiring inquiries'
     ],
-    githubUrl: 'https://github.com/Zr1409/TalentHub_Freelancer_Platform',
+    githubUrl: 'https://github.com/Zr1409/Project_Freelancer',
     architectureHighlights: [
       {
         layer: 'Leadership & Design',
@@ -201,7 +201,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Built core CRUD features, modular service business logic, and REST controllers.',
       'Integrated backend APIs smoothly with frontend engineering teams (Angular).',
       'Implemented secure authentication, session management, and role-based access control (RBAC) with Spring Security.',
-      'Wrote comprehensive unit and integration tests using JUnit and Mockito; validated API endpoints using Postman with varied datasets.',
+      'Wrote unit and integration tests using JUnit and Mockito; tested API endpoints using Postman with sample datasets.',
       'Collaborated effectively in team sprints, debugged system defects, and delivered milestones as assigned.'
     ],
     technologies: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Hibernate', 'JUnit', 'Mockito', 'Postman', 'MySQL']
@@ -229,24 +229,22 @@ export const EDUCATION: EducationItem[] = [
   {
     institution: 'Ho Chi Minh City University of Technology and Education (HCMUTE)',
     degree: 'Software Development',
-    major: 'Faculty of Information Technology',
+    major: 'Software Development',
     period: '12/2022 – Present',
     gpa: '3.63 / 4.0',
-    note: 'Dean\'s List / High Academic Achievement',
     highlights: [
-      'Rigorous foundation in Object-Oriented Programming, Data Structures, Relational Database Systems, and Web Application Architecture.',
-      'Hands-on system design projects focusing on Spring Boot backend micro-modules and React client interfaces.'
+      'Strong foundation in Object-Oriented Programming, Data Structures, Relational Database Systems, and Web Application Architecture.',
+      'Hands-on fullstack engineering focusing on Spring Boot backend micro-modules and React client interfaces.'
     ]
   },
   {
     institution: 'Ho Chi Minh City University of Technology (HCMUT)',
     degree: 'Aeronautical Engineering',
-    major: 'Faculty of Transportation Engineering',
+    major: 'Aeronautical Engineering',
     period: '10/2015 – 10/2019',
-    note: 'Engineering Foundation',
     highlights: [
       'Extensive training in advanced applied mathematics, fluid mechanics, analytical problem-solving, and structural systems.',
-      'Cultivated disciplined engineering thinking, systematic debugging capability, and tenacity when tackling complex architectural challenges.'
+      'Cultivated disciplined engineering thinking, systematic debugging capability, and tenacity when tackling complex architectural problems.'
     ]
   }
 ];
@@ -303,11 +301,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: 'Core Concepts & Architecture',
     subtitle: 'Engineering Principles & Paradigms',
     skills: [
-      { name: 'Object-Oriented Programming (OOP)', level: 'Core', description: 'Encapsulation, Inheritance, Polymorphism, Abstraction' },
+      { name: 'OOP', level: 'Core', description: 'Encapsulation, Inheritance, Polymorphism, Abstraction' },
       { name: 'MVC Architecture', level: 'Core', description: 'Model-View-Controller separation of concerns' },
       { name: 'JWT Authentication', level: 'Proficient', description: 'Stateless authorization tokens & expiration handling' },
       { name: 'OAuth2 Integration', level: 'Proficient', description: 'Third-party sign-in workflows (Google)' },
-      { name: 'Role-Based Access Control (RBAC)', level: 'Core', description: 'Method-level and URL-level security rules' },
+      { name: 'Role-Based Authorization', level: 'Core', description: 'Method-level and URL-level security rules' },
       { name: 'API Integration', level: 'Core', description: 'Third-party payment, logistics (GHN), and AI (Gemini)' }
     ]
   }
@@ -315,14 +313,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    name: 'HackerRank Certified',
+    name: 'HackerRank Certifications',
     issuer: 'HackerRank',
     topics: [
-      'Java (Basic)',
-      'Problem Solving (Basic)',
-      'Rest API (Intermediate)',
-      'SQL (Intermediate)',
-      'SQL (Advanced)'
+      { title: 'Java', level: 'Basic' },
+      { title: 'Problem Solving', level: 'Basic' },
+      { title: 'Rest API', level: 'Intermediate' },
+      { title: 'SQL', level: 'Intermediate' },
+      { title: 'SQL', level: 'Advanced' }
     ]
   }
 ];

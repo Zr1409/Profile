@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionHeader } from '../components/SectionHeader';
-import { Shield, Database, Cpu, Compass, Award, GitBranch } from 'lucide-react';
+import { Shield, Database, Cpu, Compass, Award } from 'lucide-react';
 
 export const About: React.FC = () => {
   const engineeringPillars = [
@@ -28,77 +28,73 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 sm:py-32 relative border-t border-white/[0.06] scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 sm:py-28 relative border-t border-border bg-white scroll-mt-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          number="// 01"
-          tag="Engineering Profile"
-          title="Bridging robust backend architecture with modern frontend craft."
+          number="01"
+          tag="About Me"
+          title="Bridging backend discipline with modern frontend craft."
           description="A software developer focused on building reliable, maintainable web systems from relational database design to responsive browser clients."
         />
 
         {/* Editorial Profile Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Main Editorial Text (Left) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 space-y-6 text-ivory-300 leading-relaxed text-base sm:text-lg"
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 space-y-5 text-content-secondary leading-relaxed text-base"
           >
-            <p className="text-xl sm:text-2xl font-normal text-ivory-100 leading-snug tracking-tight font-serif italic border-l-2 border-tech-cyan pl-6 my-2">
+            <p className="text-xl sm:text-2xl font-serif italic text-content leading-snug border-l-2 border-teal-600 pl-5 my-2">
               "Software engineering is about designing systems that are predictable, secure, and resilient under real-world constraints."
             </p>
 
             <p>
-              I am a Fresher Fullstack Developer based in Ho Chi Minh City, Vietnam. My technical journey began with four years of rigorous training in Aeronautical Engineering at <strong className="text-ivory-100">HCMUT (2015–2019)</strong>, where I developed disciplined analytical thinking, numerical problem-solving, and attention to detail.
+              I am a Fresher Fullstack Developer based in Ho Chi Minh City, Vietnam. My technical foundation began with four years of training in Aeronautical Engineering at <strong className="text-content font-semibold">HCMUT (2015–2019)</strong>, where I developed disciplined analytical thinking, numerical problem-solving, and attention to detail.
             </p>
 
             <p>
-              Driven by a deep interest in software architecture, I redirected my path into Software Development at <strong className="text-ivory-100">HCMUTE</strong>, earning a <strong className="text-tech-lime">GPA of 3.63</strong>. Over the past several years, I have concentrated on mastering <strong className="text-ivory-100">Java, Spring Boot, Spring Security, RESTful APIs, and relational databases (MySQL, SQL Server)</strong>, while pairing this with <strong className="text-ivory-100">React and TypeScript</strong> to deliver end-to-end applications.
+              Driven by a deep interest in software architecture, I redirected my path into Software Development at <strong className="text-content font-semibold">HCMUTE</strong>, maintaining a <strong className="text-teal-700 font-semibold">GPA of 3.63 / 4.0</strong>. Over the past several years, I have concentrated on mastering <strong className="text-content font-semibold">Java, Spring Boot, Spring Security, RESTful APIs, and relational databases (MySQL, SQL Server)</strong>, while pairing this with <strong className="text-content font-semibold">React and TypeScript</strong> to deliver complete applications.
             </p>
 
             <p>
-              In real-world project settings—including intern experience at HCMUTE and SCS Company—I have built and tested REST services with JUnit/Mockito and Postman, integrated third-party logistics APIs (GHN) and AI services (Gemini), and managed database persistence with JPA/Hibernate.
+              In practical project environments—including internship roles at HCMUTE and SCS Company—I have built and tested REST services with JUnit/Mockito and Postman, integrated third-party logistics APIs (GHN) and AI services (Gemini), and managed database persistence with JPA/Hibernate.
             </p>
 
-            <div className="pt-4 flex flex-wrap gap-4 text-xs font-mono text-ivory-400">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-850 border border-white/[0.08]">
-                <Award className="w-4 h-4 text-tech-cyan" aria-hidden="true" />
+            <div className="pt-2 flex flex-wrap gap-3 text-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-teal-50 border border-teal-200/70 text-teal-800 font-medium">
+                <Award className="w-4 h-4 text-teal-600" aria-hidden="true" />
                 <span>HCMUTE GPA: 3.63 / 4.0</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-850 border border-white/[0.08]">
-                <GitBranch className="w-4 h-4 text-tech-lime" aria-hidden="true" />
-                <span>Academic & Team Lead Experience</span>
               </div>
             </div>
           </motion.div>
 
           {/* Technical Pillars (Right) */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 grid grid-cols-1 gap-4"
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="lg:col-span-5 grid grid-cols-1 gap-3.5"
           >
             {engineeringPillars.map((pillar, idx) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={idx}
-                  className="p-5 rounded-xl bg-charcoal-900 border border-white/[0.08] hover:border-white/15 transition-all card-surface-hover"
+                  className="p-4 sm:p-5 rounded-xl bg-surface-subtle/70 border border-border hover:border-border-strong hover:bg-white transition-all shadow-subtle"
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-charcoal-850 border border-white/10 text-tech-cyan">
+                    <div className="p-2 rounded-lg bg-white border border-border text-teal-700 shadow-subtle">
                       <Icon className="w-4 h-4" aria-hidden="true" />
                     </div>
-                    <h3 className="font-bold text-base text-ivory-100 tracking-tight">
+                    <h3 className="font-bold text-base text-content">
                       {pillar.title}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-ivory-400 leading-relaxed font-mono">
+                  <p className="text-xs sm:text-sm text-content-secondary leading-relaxed font-sans">
                     {pillar.description}
                   </p>
                 </div>

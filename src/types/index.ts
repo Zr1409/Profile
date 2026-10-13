@@ -39,7 +39,6 @@ export interface EducationItem {
   major: string;
   period: string;
   gpa?: string;
-  note?: string;
   highlights?: string[];
 }
 
@@ -53,8 +52,13 @@ export interface SkillCategory {
   }[];
 }
 
+export interface CertificationTopic {
+  title: string;
+  level: string;
+}
+
 export interface Certification {
   name: string;
   issuer: string;
-  topics: string[];
+  topics: CertificationTopic[];
 }
