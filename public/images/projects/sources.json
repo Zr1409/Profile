@@ -1,0 +1,65 @@
+[
+  {
+    "file": "minlish/home.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://minlish-websites.vercel.app/",
+    "note": "Screenshot captured directly from the public live website."
+  },
+  {
+    "file": "minlish/features.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://minlish-websites.vercel.app/",
+    "note": "Screenshot captured directly from the public live website feature section."
+  },
+  {
+    "file": "talenthub/home.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://github.com/Zr1409/TalentHub_Freelancer_Platform",
+    "note": "Original frontend home route. Backend was not running. After requests settled, connection notices were dismissed using their close controls and the existing second carousel slide was selected with autoplay paused. No API responses or product data were fabricated."
+  },
+  {
+    "file": "talenthub/about.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://github.com/Zr1409/TalentHub_Freelancer_Platform",
+    "note": "Original frontend about route. Backend was not running; transient notices were dismissed using their close controls after requests settled. No API responses or product data were fabricated."
+  },
+  {
+    "file": "booknest/home.webp",
+    "width": 1886,
+    "height": 872,
+    "source": "BookNest project report, chapter 4, figure 5, word/media/image97.png",
+    "note": "Original implementation screenshot extracted from the local project report; not the earlier mockup chapter."
+  },
+  {
+    "file": "booknest/details.webp",
+    "width": 1893,
+    "height": 867,
+    "source": "BookNest project report, chapter 4, figure 6, word/media/image98.png",
+    "note": "Original book detail implementation screenshot extracted from the local project report."
+  },
+  {
+    "file": "minlish/study-workflow.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://minlish-websites.vercel.app/",
+    "note": "Direct public website capture of the three-step study workflow. No authentication or learner data was used."
+  },
+  {
+    "file": "talenthub/platform-features.webp",
+    "width": 1440,
+    "height": 1000,
+    "source": "https://github.com/Zr1409/TalentHub_Freelancer_Platform",
+    "note": "Original frontend homepage features section. Backend was not running; transient connection notices were dismissed using their close controls before capture. No API responses or product data were mocked."
+  },
+  {
+    "file": "booknest/cart.webp",
+    "width": 1887,
+    "height": 855,
+    "source": "BookNest project report, chapter 4, figure 7, word/media/image99.png",
+    "note": "Original shopping cart implementation screenshot extracted from the project report."
+  }
+]
