@@ -7,6 +7,12 @@ node_modules
 dist
 dist-ssr
 
+# Local browser review tools, screenshots, and temporary browser profile
+.review/
+
+# Local Java/MySQL/browser smoke-test artifacts
+mysql-seed-check/
+
 # Environment variables
 .env
 .env.local
