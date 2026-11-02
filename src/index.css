@@ -291,14 +291,50 @@ main:focus {
   align-items: center;
   min-height: 44px;
   font-size: var(--type-label);
-  color: var(--ink);
+  color: var(--text-secondary);
   position: relative;
   font-weight: 500;
   white-space: nowrap;
+  transition: color 220ms ease, font-weight 220ms ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 320ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .nav-links a:hover, .nav-links a[aria-current] {
-  color: var(--ink);
+  color: var(--blue);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(.48);
+  transform-origin: left center;
+}
+
+.nav-links a[aria-current] {
+  font-weight: 600;
+}
+
+.nav-links a[aria-current]::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  animation: nav-active-line 480ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.nav-links a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 5px;
+  border-radius: 3px;
 }
 
 .nav-links a > div {
@@ -835,14 +871,9 @@ h1, h2, h3 {
   letter-spacing: -.035em;
 }
 
-.nav-links a[aria-current]::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 24px;
-  height: 2px;
-  background: var(--blue);
+@keyframes nav-active-line {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 
 .dark .nav-github {

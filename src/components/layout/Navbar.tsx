@@ -167,7 +167,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
               <div className="mobile-nav-footer">
                 <a href={PERSONAL_INFO.github} className="text-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>GitHub <ArrowUpRight size={17} aria-hidden="true" /></a>
-                <a href={PERSONAL_INFO.cvPath} download className="button button-primary" onClick={closeMenu}>Download CV <ArrowDownToLine size={17} aria-hidden="true" /></a>
+                <a href={PERSONAL_INFO.cvPath} download="CV_TRAN_VAN_DU.pdf" className="button button-primary" onClick={closeMenu}>Download CV <ArrowDownToLine size={17} aria-hidden="true" /></a>
               </div>
               <p className="mobile-nav-location">{PERSONAL_INFO.location}</p>
             </div>

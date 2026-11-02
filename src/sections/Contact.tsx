@@ -45,7 +45,7 @@ export const Contact = () => {
               <a href={PERSONAL_INFO.github} target="_blank" rel="noopener noreferrer" className="contact-channel"><GitHubIcon className="contact-channel-icon" /><span>GitHub</span><ArrowUpRight size={17} aria-hidden="true" /></a>
               <a href={PERSONAL_INFO.linkedin} target="_blank" rel="noopener noreferrer" className="contact-channel"><LinkedInIcon /><span>LinkedIn</span><ArrowUpRight size={17} aria-hidden="true" /></a>
             </nav>
-            <a href={PERSONAL_INFO.cvPath} download className="contact-cv">Download CV <Download size={17} aria-hidden="true" /></a>
+            <a href={PERSONAL_INFO.cvPath} download="CV_TRAN_VAN_DU.pdf" className="contact-cv">Download CV <Download size={17} aria-hidden="true" /></a>
           </div>
         </div>
         <address className="contact-meta">

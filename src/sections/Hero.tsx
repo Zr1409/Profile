@@ -15,7 +15,7 @@ export const Hero = () => (
           <a href="#projects" className="button button-primary">
             Explore projects <ArrowDown size={17} aria-hidden="true" />
           </a>
-          <a href={PERSONAL_INFO.cvPath} download className="text-link">
+          <a href={PERSONAL_INFO.cvPath} download="CV_TRAN_VAN_DU.pdf" className="text-link">
             Download CV <Download size={17} aria-hidden="true" />
           </a>
         </div>

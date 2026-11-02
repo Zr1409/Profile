@@ -5,7 +5,7 @@ export const PERSONAL_INFO = {
   name: 'Tran Van Du', firstName: 'Tran Van', lastName: 'Du', title: 'Fresher Fullstack Developer',
   location: 'Thu Duc, Ho Chi Minh City, Vietnam', coordinates: '',
   email: 'tranvandu1409@gmail.com', phone: '0358768117', displayPhone: '(+84) 358 768 117',
-  github: 'https://github.com/Zr1409', linkedin: 'https://www.linkedin.com/in/tranvandu291097/', facebook: '', cvPath: '/files/CV_TRAN_VAN_DU.pdf',
+  github: 'https://github.com/Zr1409', linkedin: 'https://www.linkedin.com/in/tranvandu291097/', facebook: '', cvPath: '/files/CV_TRAN%20VAN%20DU.pdf',
   status: 'Available for full-time opportunities',
   bioHeadline: 'From the data model to the final detail.',
   manifesto: 'I like understanding how the pieces fit together — and making them work for the person using them.',
