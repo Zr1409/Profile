@@ -1,326 +1,108 @@
-import { Project, ExperienceItem, EducationItem, SkillCategory, Certification } from '../types';
+import type { Project, ExperienceItem, EducationItem, SkillShowcase } from '../types/portfolio';
 
+// Source of truth: public/files/CV_TRAN_VAN_DU.pdf.
 export const PERSONAL_INFO = {
-  name: 'TRAN VAN DU',
-  title: 'Fresher Fullstack Developer',
-  location: 'Thu Duc, Ho Chi Minh City, Vietnam',
-  coordinates: '10.8499° N, 106.7716° E',
-  email: 'tranvandu1409@gmail.com',
-  phone: '0358768117',
-  github: 'https://github.com/Zr1409',
-  cvPath: '/files/CV_TRAN_VAN_DU.pdf',
-  status: 'Available for Full-time Opportunities',
-  bioHeadline: 'I build web applications with a focus on clean architecture and meaningful user experiences.',
-  shortBio: 'Fullstack Developer focused on Java, Spring Boot, React and building reliable web applications from database design to user interface.',
-  coreStack: ['Java', 'Spring Boot', 'Spring Security', 'React', 'TypeScript', 'MySQL'],
+  name: 'Tran Van Du', firstName: 'Tran Van', lastName: 'Du', title: 'Fresher Fullstack Developer',
+  location: 'Thu Duc, Ho Chi Minh City, Vietnam', coordinates: '',
+  email: 'tranvandu1409@gmail.com', phone: '0358768117', displayPhone: '(+84) 358 768 117',
+  github: 'https://github.com/Zr1409', linkedin: 'https://www.linkedin.com/in/tranvandu291097/', facebook: '', cvPath: '/files/CV_TRAN_VAN_DU.pdf',
+  status: 'Available for full-time opportunities',
+  bioHeadline: 'From the data model to the final detail.',
+  manifesto: 'I like understanding how the pieces fit together — and making them work for the person using them.',
+  shortBio: 'I build web applications with Java, Spring Boot and React — connecting thoughtful database design, secure APIs and clear, usable interfaces.',
+  coreStack: ['Java', 'Spring Boot', 'React', 'TypeScript', 'MySQL'],
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: 'minlish',
-    number: '01',
-    title: 'MinLish',
-    subtitle: 'English Learning Platform with Spaced Repetition',
-    category: 'Fullstack Web Application',
-    summary: 'A fullstack English vocabulary learning platform designed around flashcards, spaced repetition (SM-2 algorithm), and learning progress tracking. Built with decoupled architecture, JWT/OAuth2 security, and a responsive interface.',
+    id: 'minlish', number: '01', title: 'MinLish', subtitle: 'A little practice. A lasting vocabulary.',
+    category: 'English learning platform',
+    summary: 'An English vocabulary platform that brings flashcards, spaced repetition and learning progress into one study workflow.',
     role: 'Fullstack Developer · System Designer · UI & Database Designer',
-    teamSize: '1 person',
-    timeline: '02/2026 – 03/2026',
-    techStack: [
-      'Java',
-      'Spring Boot',
-      'Spring Security',
-      'JPA/Hibernate',
-      'React',
-      'TypeScript',
-      'Vite',
-      'Tailwind CSS',
-      'MySQL',
-      'RESTful API',
-      'JWT',
-      'OAuth2'
+    teamSize: 'Solo project', timeline: '02/2026 – 03/2026',
+    techStack: ['Java', 'Spring Boot', 'Spring Security', 'JPA/Hibernate', 'React', 'TypeScript', 'Tailwind CSS', 'MySQL', 'Vite'],
+    keyFeatures: ['Registration and login with JWT and Google OAuth2.', 'Vocabulary set management, flashcards and study sessions.', 'SM-2 spaced repetition for review scheduling.', 'CSV/XLSX vocabulary import and export.', 'Learning statistics, retention tracking, in-app notifications and email reminder settings.'],
+    githubUrl: 'https://github.com/Zr1409/Minlish_Fullstack', liveUrl: 'https://minlish-websites.vercel.app',
+    context: 'Vocabulary study involves more than collecting words. This personal project brings creating sets, reviewing words and checking progress into a single application.',
+    contributions: ['Designed and built the application as a solo developer.', 'Designed the system, database and user interface.', 'Connected the React client to the Spring Boot backend.'],
+    highlights: ['Flashcards and SM-2 review scheduling', 'JWT/Google OAuth2, CSV/XLSX import and export'],
+    workflows: [
+      { title: 'A study session', steps: ['Choose a vocabulary set', 'Study with flashcards', 'Review with spaced repetition', 'Check learning progress'] },
+      { title: 'Managing vocabulary', steps: ['Create or edit a set', 'Add words or import a file', 'Export vocabulary as CSV/XLSX'] },
     ],
-    keyFeatures: [
-      'User authentication with JWT & Google OAuth2 integration',
-      'Vocabulary set management (CRUD) and interactive flashcard study sessions',
-      'SM-2 spaced repetition algorithm for optimal memory retention scheduling',
-      'CSV/XLSX import and export for rapid vocabulary set ingestion',
-      'Learning dashboard with retention tracking and progress curves',
-      'In-app notifications and email reminder preferences',
-      'Modern responsive UI optimized for mobile and desktop viewports'
-    ],
-    githubUrl: 'https://github.com/Zr1409/Minlish_Fullstack',
-    liveUrl: 'https://minlish-websites.vercel.app',
     architectureHighlights: [
-      {
-        layer: 'Frontend Client',
-        details: 'React 18 + TypeScript + Vite with Tailwind CSS. Modular state management and flashcard flip micro-interactions.'
-      },
-      {
-        layer: 'API & Security Gateway',
-        details: 'Spring Security with stateless JWT token validation and Google OAuth2 login pipeline.'
-      },
-      {
-        layer: 'Core Business Logic',
-        details: 'Algorithmic SM-2 interval calculations taking review grade (0-5) to predict optimal recall intervals.'
-      },
-      {
-        layer: 'Data Persistence',
-        details: 'MySQL with Spring Data JPA. Optimized queries for vocabulary sets, user learning history, and retention metrics.'
-      }
+      { layer: 'Client', details: 'React and TypeScript with Tailwind CSS for a responsive study interface.' },
+      { layer: 'Authentication', details: 'Spring Security, JWT authentication and Google OAuth2 sign-in.' },
+      { layer: 'Study workflow', details: 'SM-2 review scheduling alongside flashcards and progress tracking.' },
+      { layer: 'Persistence', details: 'MySQL data storage through Spring Data JPA and Hibernate.' },
     ],
-    challengeAndSolution: {
-      challenge: 'Accurately scheduling review dates across large decks without triggering redundant database operations.',
-      solution: 'Implemented the SM-2 formula inside a dedicated domain service with batch updates and indexed database lookups on due dates.'
-    }
   },
   {
-    id: 'talenthub',
-    number: '02',
-    title: 'TalentHub',
-    subtitle: 'Two-Sided Freelancer Marketplace Platform',
-    category: 'Freelance & Recruitment System',
-    summary: 'A freelancer job-finding platform connecting employers and freelancers through job listings, applications, secure transactions, real-time messaging, and online interviews. Engineered with reusable UI components and an AI chatbot assistant.',
-    role: 'Team Leader · Fullstack Developer · UI & Database Designer',
-    teamSize: '2 people',
-    timeline: '03/2025 – 06/2025',
-    techStack: [
-      'Spring Boot',
-      'Spring Security',
-      'JPA/Hibernate',
-      'React',
-      'JavaScript',
-      'Bootstrap',
-      'MySQL'
-    ],
-    keyFeatures: [
-      'User registration & authentication with Spring Security and BCrypt password encryption',
-      'Two-Factor Authentication (2FA) for heightened account security',
-      'Multi-parameter job search filtering by skills, category, salary range, and location',
-      'Freelancer profiles, CV/portfolio uploads, and proposal submission tracking',
-      'Employer job management, applicant pipeline review, and hiring workflows',
-      'Online interview (video call integration) and messaging with real-time notifications',
-      'Administrative dashboard for platform users, jobs, and transaction monitoring',
-      'AI Chatbot integration to assist users during job search and hiring inquiries'
-    ],
+    id: 'talenthub', number: '02', title: 'TalentHub', subtitle: 'Connecting people with their next opportunity.',
+    category: 'Freelancer platform',
+    summary: 'A two-sided platform for freelancers and employers, covering job discovery, applications, messaging and online interviews.',
+    role: 'Team Leader · Fullstack Developer · UI & Database Designer', teamSize: '2-person team', timeline: '03/2025 – 06/2025',
+    techStack: ['Spring Boot', 'Spring Security', 'JPA/Hibernate', 'React', 'Bootstrap', 'MySQL'],
+    keyFeatures: ['Account registration, encrypted passwords, role-based access and two-factor authentication.', 'Job search by skills, category, salary and location.', 'Freelancer profiles, CV/portfolio uploads and applications.', 'Employer job posting, application management and applicant review.', 'Messaging, online interviews and real-time notifications.', 'Administrative management of users, jobs and transactions; AI chatbot support.'],
     githubUrl: 'https://github.com/Zr1409/TalentHub_Freelancer_Platform',
-    architectureHighlights: [
-      {
-        layer: 'Leadership & Design',
-        details: 'Spearheaded system architecture, relational database normalization, and coordinated sprints between 2 engineers.'
-      },
-      {
-        layer: 'Security Model',
-        details: 'Implemented 2FA multi-step verification and fine-grained Role-Based Access Control (RBAC: Admin, Employer, Freelancer).'
-      },
-      {
-        layer: 'Communication Layer',
-        details: 'WebRTC / video call integration combined with real-time notification polling.'
-      },
-      {
-        layer: 'Database Architecture',
-        details: 'Multi-entity MySQL schema handling user credentials, job postings, bids, and contracts with foreign key integrity.'
-      }
+    context: 'Employers and freelancers need different paths through the same product. This team project brings both sides of the hiring workflow together.',
+    contributions: ['Led a two-person project team.', 'Worked across frontend and backend development.', 'Designed the user interface and database, and built reusable UI components.'],
+    highlights: ['Job discovery, applications and employer workflows', 'Role-based access, 2FA, messaging and online interviews'],
+    workflows: [
+      { title: 'For freelancers', steps: ['Create a profile and upload a CV', 'Search for relevant jobs', 'Submit an application', 'Message and interview with employers'] },
+      { title: 'For employers', steps: ['Publish a job', 'Manage and review applicants', 'Contact candidates', 'Arrange an online interview'] },
     ],
-    challengeAndSolution: {
-      challenge: 'Handling distinct permission boundaries and workflows for both Employers and Freelancers within a unified codebase.',
-      solution: 'Architected granular Spring Security authorization filters and segregated REST endpoints with dedicated DTOs.'
-    }
+    architectureHighlights: [
+      { layer: 'Client', details: 'React and Bootstrap for job discovery, profiles and application workflows.' },
+      { layer: 'Security', details: 'Spring Security for authentication and role-based access, with two-factor authentication.' },
+      { layer: 'Communication', details: 'Messaging and online interview features support the hiring workflow.' },
+      { layer: 'Persistence', details: 'MySQL with JPA/Hibernate for application data.' },
+    ],
   },
   {
-    id: 'booknest',
-    number: '03',
-    title: 'BookNest',
-    subtitle: 'Online Bookstore with Logistics & AI Integration',
-    category: 'E-Commerce Platform',
-    summary: 'An online bookstore supporting end-to-end product discovery, shopping cart management, ordering, online payments, delivery tracking via Giao Hang Nhanh (GHN) API, and AI Gemini recommendations for intelligent product guidance.',
-    role: 'Team Leader · Fullstack Developer · UI & Database Designer',
-    teamSize: '2 people',
-    timeline: '12/2024 – 02/2025',
-    techStack: [
-      'Java',
-      'Spring Boot',
-      'Spring Security',
-      'JPA/Hibernate',
-      'AngularJS',
-      'HTML5',
-      'CSS3',
-      'Bootstrap',
-      'SQL Server',
-      'RESTful API',
-      'GHN API',
-      'Gemini API'
-    ],
-    keyFeatures: [
-      'User account management and role-based access control',
-      'Catalog search & filtering by category, author, and price tiers',
-      'Shopping cart lifecycle and real-time order status tracking',
-      'Automated order confirmation emails via JavaMailSender',
-      'Multiple online payment options and wallet refund workflows',
-      'GHN API (Fast Delivery) integration for dynamic shipping fee calculation and parcel tracking',
-      'Gemini AI Chatbot integration for customized book recommendations',
-      'Daily and monthly revenue statistics with administrative analytics'
-    ],
+    id: 'booknest', number: '03', title: 'BookNest', subtitle: 'From the next good read to your doorstep.',
+    category: 'Online bookstore',
+    summary: 'An online bookstore connecting book discovery, checkout and delivery tracking, with GHN shipping and a Gemini product guidance chatbot.',
+    role: 'Team Leader · Fullstack Developer · UI & Database Designer', teamSize: '2-person team', timeline: '12/2024 – 02/2025',
+    techStack: ['Java', 'Spring Boot', 'Spring Security', 'JPA/Hibernate', 'AngularJS', 'SQL Server', 'GHN API', 'Gemini API'],
+    keyFeatures: ['Account management and role-based access.', 'Book search and filtering by category, author and price.', 'Shopping cart, orders, online payment and confirmation emails.', 'GHN integration for shipping fees and delivery tracking.', 'Gemini chatbot for product guidance.', 'Administration, revenue statistics, product returns and e-wallet refunds.'],
     githubUrl: 'https://github.com/Zr1409/BookNest',
-    architectureHighlights: [
-      {
-        layer: 'Third-Party Integration',
-        details: 'Integrated GHN (Giao Hang Nhanh) logistics API for real-time postal rate calculation and delivery parcel webhooks.'
-      },
-      {
-        layer: 'AI Integration',
-        details: 'Integrated Google Gemini API to analyze user reading preferences and provide contextual book suggestions.'
-      },
-      {
-        layer: 'Order Processing',
-        details: 'Transactional order processing with SQL Server, rollback safety, and transactional email dispatch.'
-      },
-      {
-        layer: 'Client Interface',
-        details: 'Modular AngularJS components handling dynamic cart state, checkout validation, and interactive tracking.'
-      }
+    context: 'A bookstore needs a connected journey from finding a title to receiving an order. This project combines shopping with shipping and product guidance integrations.',
+    contributions: ['Led a two-person project team.', 'Developed fullstack features and designed the user interface.', 'Designed the database for the bookstore application.'],
+    highlights: ['Book discovery, checkout and order management', 'GHN delivery tracking and Gemini product guidance'],
+    workflows: [
+      { title: 'The shopping journey', steps: ['Search and filter books', 'Add titles to the cart', 'Place and pay for an order', 'Track delivery through GHN'] },
+      { title: 'Store administration', steps: ['Manage products and orders', 'Review revenue statistics', 'Handle returns and refunds'] },
     ],
-    challengeAndSolution: {
-      challenge: 'Synchronizing third-party shipping fee calculations dynamically during checkout without degrading page response time.',
-      solution: 'Cached regional shipping fee tables and dispatched asynchronous GHN API calls with fallback rate estimation.'
-    }
-  }
+    architectureHighlights: [
+      { layer: 'Client', details: 'AngularJS with HTML, CSS and Bootstrap for the storefront.' },
+      { layer: 'Backend', details: 'Java, Spring Boot and Spring Security for APIs and role-based access.' },
+      { layer: 'Integrations', details: 'GHN for shipping fees and tracking; Gemini for chatbot product guidance.' },
+      { layer: 'Persistence', details: 'SQL Server with JPA/Hibernate.' },
+    ],
+  },
 ];
 
 export const EXPERIENCES: ExperienceItem[] = [
-  {
-    id: 'hcmute-intern',
-    position: 'Backend Developer Intern & Fresher',
-    company: 'Ho Chi Minh City University of Technology and Education (HCMUTE)',
-    period: '06/2025 – 10/2025',
-    location: 'Ho Chi Minh City, Vietnam',
-    type: 'Internship & Fresher',
-    responsibilities: [
-      'Developed high-performance RESTful APIs using Java and Spring Framework for university department software.',
-      'Implemented data persistence layers using Spring Data JPA and Hibernate with relational database modeling.',
-      'Built core CRUD features, modular service business logic, and REST controllers.',
-      'Integrated backend APIs smoothly with frontend engineering teams (Angular).',
-      'Implemented secure authentication, session management, and role-based access control (RBAC) with Spring Security.',
-      'Wrote unit and integration tests using JUnit and Mockito; tested API endpoints using Postman with sample datasets.',
-      'Collaborated effectively in team sprints, debugged system defects, and delivered milestones as assigned.'
-    ],
-    technologies: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Hibernate', 'JUnit', 'Mockito', 'Postman', 'MySQL']
-  },
-  {
-    id: 'scs-intern',
-    position: 'Fullstack Developer Intern',
-    company: 'SCS Company',
-    period: '10/2024 – 02/2025',
-    location: 'Ho Chi Minh City, Vietnam',
-    type: 'Internship',
-    responsibilities: [
-      'Developed and refined frontend client features using AngularJS and modern web standards.',
-      'Built backend RESTful services and business endpoints with Java.',
-      'Integrated user interfaces with relational databases and external REST APIs.',
-      'Created reusable UI components and backend service abstractions, reducing turnaround time for new features.',
-      'Supported relational data persistence and query optimization with Hibernate/JPA and SQL Server.',
-      'Analyzed, debugged, and resolved software defects to ensure application stability in staging and production.'
-    ],
-    technologies: ['Java', 'AngularJS', 'Spring Boot', 'Hibernate', 'SQL Server', 'REST APIs', 'Bootstrap']
-  }
+  { id: 'hcmute-backend', position: 'Backend Developer', company: 'HCMUTE', period: '06/2025 – 10/2025', location: 'Ho Chi Minh City, Vietnam', type: 'Intern & Fresher',
+    responsibilities: ['Built Java/Spring REST APIs, including CRUD features, services and controllers.', 'Implemented persistence with JPA/Hibernate and login, roles and sessions with Spring Security.', 'Integrated backend APIs with the Angular frontend team.', 'Wrote tests with JUnit and Mockito; checked endpoints with Postman and fixed defects.'],
+    technologies: ['Java', 'Spring Boot', 'Spring Security', 'JPA/Hibernate', 'JUnit', 'Mockito', 'Postman'] },
+  { id: 'scs-intern', position: 'Fullstack Developer Intern', company: 'SCS Company', period: '10/2024 – 02/2025', location: 'Ho Chi Minh City, Vietnam', type: 'Internship',
+    responsibilities: ['Developed AngularJS frontend features and Java backend APIs.', 'Connected interfaces with databases and REST services.', 'Built reusable UI components and backend services.', 'Worked with Hibernate/JPA and SQL Server; debugged application defects.'],
+    technologies: ['Java', 'AngularJS', 'Hibernate/JPA', 'SQL Server'] },
 ];
-
 export const EDUCATION: EducationItem[] = [
-  {
-    institution: 'Ho Chi Minh City University of Technology and Education (HCMUTE)',
-    degree: 'Software Development',
-    major: 'Software Development',
-    period: '12/2022 – Present',
-    gpa: '3.63 / 4.0',
-    highlights: [
-      'Strong foundation in Object-Oriented Programming, Data Structures, Relational Database Systems, and Web Application Architecture.',
-      'Hands-on fullstack engineering focusing on Spring Boot backend micro-modules and React client interfaces.'
-    ]
-  },
-  {
-    institution: 'Ho Chi Minh City University of Technology (HCMUT)',
-    degree: 'Aeronautical Engineering',
-    major: 'Aeronautical Engineering',
-    period: '10/2015 – 10/2019',
-    highlights: [
-      'Extensive training in advanced applied mathematics, fluid mechanics, analytical problem-solving, and structural systems.',
-      'Cultivated disciplined engineering thinking, systematic debugging capability, and tenacity when tackling complex architectural problems.'
-    ]
-  }
+  { institution: 'HCMUTE', degree: 'Software Development', major: 'Software Development', period: '12/2022 – Present', gpa: '3.63', highlights: ['Ho Chi Minh City University of Technology and Education'] },
+  { institution: 'HCMUT', degree: 'Aeronautical Engineering', major: 'Aeronautical Engineering', period: '10/2015 – 10/2019', highlights: ['Ho Chi Minh City University of Technology'] },
 ];
-
-export const SKILL_CATEGORIES: SkillCategory[] = [
-  {
-    title: 'Backend Engineering',
-    subtitle: 'Architecture, APIs, and Data Management',
-    skills: [
-      { name: 'Java', level: 'Core', description: 'OOP, Collections, Streams, Multithreading' },
-      { name: 'Spring Boot', level: 'Core', description: 'Application setup, Auto-configuration, Starters' },
-      { name: 'Spring MVC', level: 'Core', description: 'Controllers, Request handling, Model mapping' },
-      { name: 'Spring Security', level: 'Proficient', description: 'JWT, Filter Chains, RBAC, OAuth2' },
-      { name: 'Spring Data JPA', level: 'Core', description: 'Repositories, Custom Queries, Pagination' },
-      { name: 'Hibernate', level: 'Core', description: 'ORM mapping, Lazy/Eager loading, Caching' },
-      { name: 'RESTful APIs', level: 'Core', description: 'Stateless design, HTTP verbs, Error handling' }
-    ]
-  },
-  {
-    title: 'Frontend Development',
-    subtitle: 'User Interfaces, Types, and Responsiveness',
-    skills: [
-      { name: 'ReactJS', level: 'Core', description: 'Hooks, Component lifecycle, State management' },
-      { name: 'TypeScript', level: 'Core', description: 'Strict typing, Generics, Interfaces' },
-      { name: 'JavaScript (ES6+)', level: 'Core', description: 'Async/Await, Promises, Closures' },
-      { name: 'AngularJS', level: 'Experienced', description: 'Directives, Controllers, Services' },
-      { name: 'Tailwind CSS', level: 'Proficient', description: 'Utility-first styling, Responsive layouts' },
-      { name: 'HTML5 & CSS3', level: 'Core', description: 'Semantic markup, Flexbox, CSS Grid' },
-      { name: 'Bootstrap', level: 'Experienced', description: 'Grid system, Utility classes' }
-    ]
-  },
-  {
-    title: 'Databases & Storage',
-    subtitle: 'Relational Modeling & Query Execution',
-    skills: [
-      { name: 'MySQL', level: 'Core', description: 'Schema design, Indexes, Joins, Transactions' },
-      { name: 'SQL Server', level: 'Proficient', description: 'Stored procedures, T-SQL, Views' },
-      { name: 'MongoDB', level: 'Familiar', description: 'Document stores, Aggregations' }
-    ]
-  },
-  {
-    title: 'Tools & Ecosystem',
-    subtitle: 'Development Environment & Quality',
-    skills: [
-      { name: 'Git & GitHub', level: 'Core', description: 'Branching, PRs, Merge conflict resolution' },
-      { name: 'GitLab', level: 'Proficient', description: 'Version control and collaboration' },
-      { name: 'Postman', level: 'Core', description: 'API testing, Collections, Environment variables' },
-      { name: 'Docker', level: 'Familiar', description: 'Containerization, Dockerfile, Container runs' },
-      { name: 'IntelliJ IDEA', level: 'Daily Driver', description: 'Java/Spring debugging, Profiling' },
-      { name: 'VS Code', level: 'Daily Driver', description: 'React, TypeScript, Frontend tooling' }
-    ]
-  },
-  {
-    title: 'Core Concepts & Architecture',
-    subtitle: 'Engineering Principles & Paradigms',
-    skills: [
-      { name: 'OOP', level: 'Core', description: 'Encapsulation, Inheritance, Polymorphism, Abstraction' },
-      { name: 'MVC Architecture', level: 'Core', description: 'Model-View-Controller separation of concerns' },
-      { name: 'JWT Authentication', level: 'Proficient', description: 'Stateless authorization tokens & expiration handling' },
-      { name: 'OAuth2 Integration', level: 'Proficient', description: 'Third-party sign-in workflows (Google)' },
-      { name: 'Role-Based Authorization', level: 'Core', description: 'Method-level and URL-level security rules' },
-      { name: 'API Integration', level: 'Core', description: 'Third-party payment, logistics (GHN), and AI (Gemini)' }
-    ]
-  }
-];
-
-export const CERTIFICATIONS: Certification[] = [
-  {
-    name: 'HackerRank Certifications',
-    issuer: 'HackerRank',
-    topics: [
-      { title: 'Java', level: 'Basic' },
-      { title: 'Problem Solving', level: 'Basic' },
-      { title: 'Rest API', level: 'Intermediate' },
-      { title: 'SQL', level: 'Intermediate' },
-      { title: 'SQL', level: 'Advanced' }
-    ]
-  }
+export const SKILL_SHOWCASE: SkillShowcase[] = [
+  { title: 'Java & Spring Boot', context: 'Backend development', tools: ['Java', 'Spring Boot', 'Spring MVC', 'REST APIs'] },
+  { title: 'Authentication & access', context: 'Application security', tools: ['Spring Security', 'JWT', 'Google OAuth2', 'Role-based access', '2FA'] },
+  { title: 'Data persistence', context: 'From models to storage', tools: ['Spring Data JPA', 'Hibernate', 'Relational mapping'] },
+  { title: 'React & TypeScript', context: 'Modern frontend development', tools: ['React', 'TypeScript', 'JavaScript', 'Vite'] },
+  { title: 'Web interfaces', context: 'Responsive user interfaces', tools: ['HTML', 'CSS', 'Tailwind CSS', 'Bootstrap'] },
+  { title: 'Angular & integration', context: 'Project and internship experience', tools: ['AngularJS', 'Angular API integration', 'REST services'] },
+  { title: 'Databases', context: 'Relational database design', tools: ['MySQL', 'SQL Server', 'SQL'], familiarTools: ['MongoDB'] },
+  { title: 'Testing & debugging', context: 'Checking application behavior', tools: ['JUnit', 'Mockito', 'Postman', 'API testing'] },
+  { title: 'Development workflow', context: 'Tools for building together', tools: ['Git', 'GitHub', 'GitLab', 'IntelliJ IDEA', 'VS Code'], familiarTools: ['Docker'] },
 ];

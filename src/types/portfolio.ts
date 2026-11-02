@@ -1,3 +1,15 @@
+export interface CertificateDocument {
+  id: string;
+  title: string;
+  issuer: string;
+  year?: string;
+  category?: string;
+  levelBadge?: string;
+  description?: string;
+  previewSrc: string;
+  pdfSrc: string;
+}
+
 export interface Project {
   id: string;
   number: string;
@@ -12,6 +24,10 @@ export interface Project {
   githubUrl: string;
   liveUrl?: string;
   category: string;
+  context?: string;
+  contributions?: string[];
+  highlights?: string[];
+  workflows?: { title: string; steps: string[] }[];
   architectureHighlights?: {
     layer: string;
     details: string;
@@ -42,23 +58,19 @@ export interface EducationItem {
   highlights?: string[];
 }
 
-export interface SkillCategory {
+export interface SkillShowcase {
   title: string;
-  subtitle: string;
-  skills: {
-    name: string;
-    level?: string;
-    description?: string;
-  }[];
+  context: string;
+  tools: string[];
+  familiarTools?: string[];
 }
 
-export interface CertificationTopic {
+export interface ProjectScreenshot {
+  src: string;
+  previewSrc: string;
   title: string;
-  level: string;
-}
-
-export interface Certification {
-  name: string;
-  issuer: string;
-  topics: CertificationTopic[];
+  alt: string;
+  width: number;
+  height: number;
+  source: string;
 }
