@@ -1,78 +1,95 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
+import { Navbar } from './components/layout/Navbar';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
 import { Projects } from './sections/Projects';
 import { Experience } from './sections/Experience';
 import { Skills } from './sections/Skills';
+import { Certifications } from './sections/Certifications';
 import { Education } from './sections/Education';
 import { Contact } from './sections/Contact';
-import { Footer } from './components/Footer';
+import { Footer } from './components/layout/Footer';
+import { useScrollReveal } from './hooks/useScrollReveal';
 
 export const App: React.FC = () => {
+  useScrollReveal();
   const [activeSection, setActiveSection] = useState<string>('hero');
 
-  // Throttled scroll listener using requestAnimationFrame for 60fps/120fps performance
   useEffect(() => {
-    const sectionIds = ['hero', 'about', 'projects', 'experience', 'skills', 'education', 'contact'];
-    let ticking = false;
+    const sectionIds = [
+      'hero',
+      'about',
+      'projects',
+      'experience',
+      'skills',
+      'education',
+      'achievements',
+      'contact'
+    ];
+    const sections = sectionIds.map((id) => document.getElementById(id));
+    let animationFrame = 0;
 
     const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + 220;
+      // Keep the active link aligned with the reading area beneath the header.
+      const readingLine = Math.min(220, Math.max(120, window.innerHeight * 0.24));
+      let nextSection = sectionIds[0];
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const id = sectionIds[i];
-        const element = document.getElementById(id);
-        if (element) {
-          const top = element.getBoundingClientRect().top + window.scrollY;
-          if (scrollPosition >= top) {
-            setActiveSection(id);
-            break;
-          }
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i] && sections[i]!.getBoundingClientRect().top <= readingLine) {
+          nextSection = sectionIds[i];
+          break;
         }
       }
-      ticking = false;
+      setActiveSection(nextSection);
+      animationFrame = 0;
     };
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(updateActiveSection);
-        ticking = true;
+    const scheduleUpdate = () => {
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(updateActiveSection);
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate, { passive: true });
     updateActiveSection();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      window.cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-slate-100/60 dark:bg-[#080C14] text-slate-900 dark:text-slate-100 selection:bg-blue-600/20 selection:text-blue-600 dark:selection:bg-blue-400/30 dark:selection:text-blue-300 font-sans transition-colors duration-200">
-      {/* Accessible skip link for keyboard navigation */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-blue-600 text-white font-sans text-xs font-bold shadow-lg focus-ring"
-      >
-        Skip to main content
-      </a>
+      <div className="app-shell">
 
-      {/* Top Navbar */}
-      <Navbar activeSection={activeSection} />
+        {/* Accessible skip link for keyboard navigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-[100] px-4 py-2 rounded-lg bg-blue-600 text-white font-sans text-xs font-bold shadow-lg focus-ring"
+        >
+          Skip to main content
+        </a>
 
-      {/* Main Sections */}
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Projects />
-        <Experience />
-        <Skills />
-        <Education />
-        <Contact />
-      </main>
+        {/* Top Fixed Header & Navbar */}
+        <Navbar activeSection={activeSection} />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Primary Semantic Landmark */}
+        <main id="main-content" tabIndex={-1}>
+          <Hero />
+          <About />
+          <Projects />
+          <Experience />
+          <Skills />
+          <Education />
+          <Certifications />
+          <Contact />
+        </main>
+
+        {/* Footer Landmark */}
+        <Footer />
+
+      </div>
   );
 };
 
